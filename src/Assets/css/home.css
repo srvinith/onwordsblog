@@ -1,11 +1,94 @@
 .blog-background {
-    /* background-color: red; */
-    /* background-image: url(../images/background-blog.jpg); */
+    background-color: rgb(204, 222, 11);
+    /* background-image: url(../images/background-image.avif); */
     width: 100%;
     height: 100vh;
-    background-position: center;
+    background-position: cover;
     background-repeat: no-repeat;
     background-attachment: ;
-  
+
     /* background-size: cover; */
+}
+
+.onwords-home {
+    /* color: white; */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-100%, 20%);
+}
+
+.onwords-home h1 {
+    font-size: 360%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: example 1s linear 0s infinite alternate;
+}
+
+@keyframes example {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 480px;
+    }
+}
+
+
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+}
+
+.blog-btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    /* background-color: black;
+    color: white; */
+}
+
+.blog-btn {
+    background-color: #fff;
+    color: #1CD1E2;
+    border: 2px solid #1CD1E2 !important;
+    border-radius: 0px !important;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 1;
+    transition: all 0.6s ease 0s;
+    overflow: hidden;
+}
+
+.blog-btn:hover {
+    color: #fff !important;
+}
+
+.blog-btn:before {
+    background: #1CD1E2;
+    content: "";
+    height: 1000px;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transition: all 0.2s linear 0s;
+    width: 0;
+    z-index: -1;
+}
+
+.blog-btn:hover:before {
+    opacity: 1;
+    width: 100%;
 }
