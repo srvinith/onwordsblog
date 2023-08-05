@@ -4,6 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+// -----icons
+import SearchIcon from '@mui/icons-material/Search';
+
 
 const Navbars = () => {
 
@@ -19,7 +22,7 @@ const Navbars = () => {
         Logo
       </div>
       <div className="">
-        Search
+        <SearchIcon />
       </div>
 </div>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
