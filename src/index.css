@@ -6,6 +6,15 @@
   left: 50%;
   top: 50%;
   z-index: 9;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 10px;
+}
+.topNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  background-color: #ccc;
+  padding: 0 30px
 }

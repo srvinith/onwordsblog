@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,16 +7,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Navbars = () => {
 
-    // const [login, setLogin] = useState(false)
+    const [login, setLogin] = useState(false)
 
 
     return (
         <>
       
-
+<div className="topNav">
+      <div className=""></div>
+      <div className="">
+        Logo
+      </div>
+      <div className="">
+        Search
+      </div>
+</div>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Container fluid>
+        <Navbar.Brand href="#home">Onwords Blog</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -42,6 +50,7 @@ const Navbars = () => {
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
+          <button onClick={()=>setLogin(!login)}>Login</button>
           <Navbar.Text>
             Signed in as: <a href="#login">Mark Otto</a>
           </Navbar.Text>
@@ -51,11 +60,11 @@ const Navbars = () => {
     
  
           
-            {/* {
+            {
                 login ?<div classNameNameName="login-box ">
-
+hgjf
                 </div> : null
-            } */}
+            }
         </>
 
 
