@@ -1,5 +1,7 @@
 import React from 'react'
 import '../Assets/css/home.css'
+// import '../Assets/images/robert-roy.png'
+import Health from '../Assets/images/health.png'
 const Home = () => {
   return (
     <>
@@ -9,6 +11,21 @@ const Home = () => {
           <h3>Discover stories, thinking, and expertise
             <br></br>from writers on any topic.</h3>
           <a href="#"><button className='blog-btn'>Get Started</button></a>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
+              <div>
+               </div>
+            </div>
+            <div className="col-md-3">
+              <img className='health' src={Health} alt="health" />
+            </div>
+            <div className="col-md-4"></div>
+          </div>
+          
         </div>
       </section>
     </>
