@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Link} from 'react-router-dom'
 
 
 // --------imgs
@@ -19,10 +20,12 @@ import LockIcon from '@mui/icons-material/Lock';
 
 
 
+
 const Navbars = () => {
 
   const [login, setLogin] = useState(false)
   const[search,setSearch] = useState(false)
+
 
 
   return (
@@ -39,12 +42,12 @@ const Navbars = () => {
       </div>
       <Navbar collapseOnSelect expand="lg" className="nav-bot">
         <Container>
-          <Navbar.Brand href="#home"></Navbar.Brand>
+          <Navbar.Brand href="/"></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto mx-4">
-              <Nav.Link href="#features" className='mx-4'>Home</Nav.Link>
-              <Nav.Link href="#pricing" className='mx-4'>Blog</Nav.Link>
+              <Nav.Link href="/" className='mx-4'>Home</Nav.Link>
+              <Nav.Link href="/blog" className='mx-4'>Blog</Nav.Link>
               <NavDropdown title="Categories" id="collasible-nav-dropdown" className='mx-4'>
                 <NavDropdown.Item href="">Action</NavDropdown.Item>
                 <NavDropdown.Item href="">
@@ -56,8 +59,9 @@ const Navbars = () => {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link href="/about" className='mx-4'>About</Nav.Link>
+            <Nav.Link href="/contact" className='mx-4'>Contact</Nav.Link>
             </Nav>
-
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
             <div className="end-nav-li">
@@ -87,7 +91,7 @@ const Navbars = () => {
               <input type="password" placeholder='Password' />
             </div>
 
-            <a href="">Forgot Password</a> <br />
+            <Link to="">Forgot Password</Link> <br />
 
             <button className='btn btn-primary mt-3'>Signin</button>
           </div>
@@ -101,7 +105,11 @@ const Navbars = () => {
           <h2 className='closemark' onClick={()=>setSearch(false)}>X</h2>
           <div className="search-inp">
            <div className="inp">
-            
+            <div className="input-box">
+            <input type="text"  placeholder='search Here...'/>
+            <SearchIcon className='search-icon-btn' onClick={()=>setSearch(false)}/>
+            </div>
+           
            </div>
           </div>
           </div>

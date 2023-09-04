@@ -1,8 +1,8 @@
-from flask import Flask
+from flask import Flask,send_from_directory
 app=Flask(__name__)
 
-@app.route('/members')
+@app.route('/blog')
 def home():
- return {"members":["Member1","Member2","Member3"]}
+ return send_from_directory('../backend/build/', 'blog')
 if __name__ == '__main__':
  app.run(debug=True)
