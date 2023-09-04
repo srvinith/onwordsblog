@@ -31,6 +31,7 @@ const Navbars = () => {
   return (
     <>
 
+      <div className="nav-sticky">
       <div className="topNav bg-body-tertiary">
         <div className=""><MenuIcon /></div>
         <div className="">
@@ -65,15 +66,35 @@ const Navbars = () => {
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
             <div className="end-nav-li">
-              <button className='btn btn-primary'>CreateBlog</button>
               <PersonIcon onClick={() => setLogin(!login)} className='icon-nav' />
               <NotificationsIcon className='icon-nav' />
             </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
+
+      
 
       {
+        search ? <div className='searchBg'>
+          <div className="searchcloser" >
+          <h2 className='closemark' onClick={()=>setSearch(false)}>X</h2>
+          <div className="search-inp">
+           <div className="inp">
+            <div className="input-box">
+            <input type="text"  placeholder='search Here...'/>
+            <SearchIcon className='search-icon-btn' onClick={()=>setSearch(false)}/>
+            </div>
+           
+           </div>
+          </div>
+          </div>
+        </div>:null
+      }
+
+
+{
         login ? <div className="login-box ">
 
           <div className="signin">
@@ -97,23 +118,6 @@ const Navbars = () => {
           </div>
 
         </div> : null
-      }
-
-      {
-        search ? <div className='searchBg'>
-          <div className="searchcloser" >
-          <h2 className='closemark' onClick={()=>setSearch(false)}>X</h2>
-          <div className="search-inp">
-           <div className="inp">
-            <div className="input-box">
-            <input type="text"  placeholder='search Here...'/>
-            <SearchIcon className='search-icon-btn' onClick={()=>setSearch(false)}/>
-            </div>
-           
-           </div>
-          </div>
-          </div>
-        </div>:null
       }
     </>
 
