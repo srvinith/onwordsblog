@@ -184,15 +184,10 @@
     top: 25%;
     padding-left: 20px;
 }
-<<<<<<< HEAD
 
 .Recommended-topics {
     height: 100vh;
-=======
->>>>>>> 23c87f019882b9fdc1c6a6432b8021c34acc03da
 
-.Recommended-topics {
-    height: 100vh;
 }
 
 .recomment {
@@ -209,7 +204,11 @@
 }
 
 /* ==========side-section-home end===== */
+
 /* ================blog details========= */
+
+
+
 /* blog */
 .blog-page {
     width: 70%;

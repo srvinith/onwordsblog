@@ -37,7 +37,7 @@ const Blog = () => {
               <ChatBubbleOutlineIcon />
             </div>
             <div>
-              <  BookmarkBorderIcon />
+              < BookmarkBorderIcon />
               <NotStartedIcon />
               <IosShareIcon />
             </div>
@@ -58,7 +58,6 @@ const Blog = () => {
             <div className='blog-para'>
               <i>“What am I doing?”</i><br></br>
               <i>“Look at everyone else getting promotions…am I wasting my time out here?”
-
               </i><br></br>
               <i>“What do I have to show for my year off?”</i>
             </div>
