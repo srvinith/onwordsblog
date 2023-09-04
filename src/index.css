@@ -1,15 +1,16 @@
-.login-box{
-  background-color:red;
+.login-box {
+  background-color: red;
   width: 100%;
   position: sticky;
   top: 50%;
-  right:50%;
+  right: 50%;
   z-index: 999;
 }
-.signin{
+
+.signin {
   background-color: #ccc;
   width: 25%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   margin-top: 50px;
@@ -20,20 +21,23 @@
   text-align: center;
   padding: 30px 0px;
 }
-.logo{
+
+.logo {
   width: 100px;
 }
-.searchbtn{
+
+.searchbtn {
   cursor: pointer;
 }
-.nav-sticky{
+
+.nav-sticky {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 10;
 }
 
-.form-group{
+.form-group {
   width: 90%;
   margin: 10px auto;
   /* height: 20px; */
@@ -41,22 +45,25 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
-  
+
 }
-.form-group input{
+
+.form-group input {
   width: 100%;
   background: transparent;
   border: none;
   outline: none;
   padding: 10px 4px;
 }
-.nav-bot{
+
+.nav-bot {
   border-bottom: 1px solid #000;
   width: 80%;
   margin: 0 auto;
   background-color: #fff;
 }
-.topNav{
+
+.topNav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,8 +71,9 @@
   height: 60px;
   padding: 0 30px
 }
-.icon-nav{
-  background-color:#eee;
+
+.icon-nav {
+  background-color: #eee;
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -74,34 +82,39 @@
   cursor: pointer;
 
 }
-.searchBg{
-  background-color: rgb(0,0,0,0.9);
+
+.searchBg {
+  background-color: rgb(0, 0, 0, 0.9);
   width: 100%;
   left: 50%;
   top: 0%;
   position: sticky;
   z-index: 10;
 }
-.closemark{
+
+.closemark {
   cursor: pointer;
   color: #fff;
   float: right;
   margin-right: 30px;
 }
-.search-inp{
+
+.search-inp {
   border-radius: 10px;
   margin: 0 auto;
   height: 100vh;
   width: 100%;
 }
-.inp{
+
+.inp {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 80vh;
 }
-.input-box{
+
+.input-box {
   width: 60%;
   height: 30px;
   background-color: transparent;
@@ -115,7 +128,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.input-box input{
+
+.input-box input {
   width: 90%;
   height: 30px;
   position: absolute;
@@ -127,11 +141,18 @@
   color: #fff;
   padding: 0px 10px;
 }
-.search-icon-btn{
+
+.search-icon-btn {
   position: absolute;
   right: 10px;
   cursor: pointer;
 }
-.input-box input::placeholder{
+
+.input-box input::placeholder {
   color: #fff;
+}
+
+.collapse-nav {
+  padding: 0;
+  margin-top: -10px;
 }

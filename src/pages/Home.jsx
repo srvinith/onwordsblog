@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Assets/css/home.css'
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-bootstrap/Dropdown';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +22,6 @@ import Health from '../Assets/images/health.png'
 const Home = () => {
 
   const [isBookmarked, setIsBookmarked] = useState(false);
-  const [report, setReport] = useState(false);
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked);
   };
@@ -60,7 +60,6 @@ const Home = () => {
                   Publish your passions, your way <br />
                   Create a unique and beautiful blog easily.
                 </h2>
-
                 <Link to="#"><button className='btn btn-primary'>CreateBlog</button></Link>
               </div>
             </div>
@@ -126,16 +125,18 @@ const Home = () => {
                           <ToastContainer />
                         </div>
                       </div>
-                      <div className="more-btn" onClick={() => setReport(true)}>
-                        <MoreHorizIcon />
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
-                    {
-                      report ? <div className="report">
-                        <p>Mute this author</p>
-                        <p>Report</p>
-                      </div> : null
-                    }
                   </div>
                 </div>
               </section>
@@ -182,16 +183,18 @@ const Home = () => {
                           <ToastContainer />
                         </div>
                       </div>
-                      <div className="more-btn" onClick={() => setReport(true)}>
-                        <MoreHorizIcon />
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
-                    {
-                      report ? <div className="report">
-                        <p>Mute this author</p>
-                        <p>Report</p>
-                      </div> : null
-                    }
                   </div>
                 </div>
               </section>
@@ -236,16 +239,18 @@ const Home = () => {
                           <ToastContainer />
                         </div>
                       </div>
-                      <div className="more-btn" onClick={() => setReport(true)}>
-                        <MoreHorizIcon />
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
-                    {
-                      report ? <div className="report">
-                        <p>Mute this author</p>
-                        <p>Report</p>
-                      </div> : null
-                    }
                   </div>
                 </div>
               </section>
@@ -290,16 +295,18 @@ const Home = () => {
                           <ToastContainer />
                         </div>
                       </div>
-                      <div className="more-btn" onClick={() => setReport(true)}>
-                        <MoreHorizIcon />
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
-                    {
-                      report ? <div className="report">
-                        <p>Mute this author</p>
-                        <p>Report</p>
-                      </div> : null
-                    }
                   </div>
                 </div>
               </section>
@@ -344,30 +351,97 @@ const Home = () => {
                           <ToastContainer />
                         </div>
                       </div>
-                      <div className="more-btn" onClick={() => setReport(true)}>
-                        <MoreHorizIcon />
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
-                    {
-                      report ? <div className="report">
-                        <p>Mute this author</p>
-                        <p>Report</p>
-                      </div> : null
-                    }
                   </div>
                 </div>
               </section>
+              <section className='thumbline-page'>
+                <div className="blog-details">
+                  <div className="thumbline-above">
+                    <div className="f-above-sec">
+                      <div className="post-cre-details">
+                        <div className="user-img">
+                          <AccountCircleIcon />
+                        </div>
+                        <div className="user-name">
+                          <span>Anirudh Munipalli</span>
+                          <small>sep-3</small>
+                        </div>
+                      </div>
+                      <h6>
+                        STOP using simple console.log in JavaScript. Try this instead
+                      </h6>
+                      <p>Debugging. Something that programmers try hard to avoid, only to make more bugs in code. Coding without bugs is something even the... </p>
+                    </div>
+                    <div className="s-above-sec">
+                      <div className="post-img">
+                        <img src={Health} alt="post-img" />
+                      </div>
 
+                    </div>
+                  </div>
+                  <div className="thumbline-below">
+                    <div className="f-below-thumbline">
+                      <div className="our-related-topic">
+                        <p>JavaScript</p>
+                      </div>
+                      <div className="read-min">
+                        <small>4 min read</small>
+                      </div>
+                    </div>
+                    <div className="markable-icons">
+                      <div className="bookmark">
+                        <div className="unbookmark" onClick={toggleBookmark}>
+                          {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon onClick={notify} />}
+                          <ToastContainer />
+                        </div>
+                      </div>
+                      <div className="more-btn">
+                        <Dropdown>
+                          <Dropdown.Toggle id="dropdown-basic">
+                            <MoreHorizIcon />
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item className='dropdown' href="#">Mute this author</Dropdown.Item>
+                            <Dropdown.Item className='dropdown' href="#">Report</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* ============= ui only add this thumbline copy for ui struc=================== */}
             </div>
             <div className="col-md-4">
               <div className="side-section-home">
-                    <div className="">
-                      <div className="Recommended-topics">
+                <div className="">
+                  <div className="Recommended-topics">
                     <h5>Recommended topics</h5>
-                      </div>
+
+                    <div className="recomment">
+                    <p>Programming</p>
+                    <p>Data Science</p>
+                    <p>Self Improvement</p>
+                    <p>Writing</p>
+                    <p>relationships</p>
+                    <p>Machine Learning</p>
+                    <p>Productivity</p>
                     </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
