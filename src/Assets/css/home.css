@@ -25,7 +25,8 @@
     background-position: center;
     position: relative;
 }
-.dummy-container{
+
+.dummy-container {
     margin-top: 300px;
 }
 
@@ -119,27 +120,28 @@
 
 }
 
-.our-related-topic p{
+.our-related-topic p {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ccc;
     border-radius: 10px;
-    padding:10px;
-    margin-top:15px;
+    padding: 10px;
+    margin-top: 15px;
     margin-right: 10px;
 }
-.bookmark{
+
+.bookmark {
     position: relative;
 }
 
-.markable-icons{
+.markable-icons {
     display: flex;
     align-items: center;
     padding-right: 50px;
 }
 
-.report{
+.report {
     background-color: #fff;
     box-shadow: 1px 1px 2px #000;
     width: fit-content;
@@ -150,27 +152,30 @@
     top: 40%;
     border-radius: 4px;
 }
-.report p{
+
+.report p {
     white-space: nowrap;
     cursor: pointer;
     padding: 5px 0px;
 }
-.report p:hover{
-   border-bottom: 2px solid #ccc;
-   padding-bottom: 7px;
+
+.report p:hover {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 7px;
 }
 
 
 /* ==========side-section-home start===== */
 
-.side-section-home{
+.side-section-home {
     border-left: 2px solid #ccc;
     height: auto;
     position: sticky;
     bottom: 0;
     padding-left: 20px;
 }
-.Recommended-topics{
+
+.Recommended-topics {
     height: 100vh;
 
 }
@@ -178,3 +183,36 @@
 
 /* ==========side-section-home end===== */
 /* ================blog details========= */
+/* blog */
+.blog-page {
+    width: 70%;
+    margin: auto;
+}
+
+.che {
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+}
+
+.chegue {
+    display: flex;
+    
+}
+.blog-che{
+    margin-left: 10px;
+}
+.blog-icon{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.blog-para{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.blog-icons{
+justify-content: space-between;
+}
+/* blog end */
