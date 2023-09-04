@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // images //
-import che from '../Assets/images/che.webp'
+// import che from '../Assets/images/che.webp'
 import BackHandIcon from '@mui/icons-material/BackHand';
 
 // images //
@@ -21,7 +21,7 @@ const Blog = () => {
             <div className='blog-che'>
               <span>
                 <link>Chgr</link>
-                <a href="#">Cheguevara</a>
+                {/* <a href="#">Cheguevara</a> */}
                 <p >FOLLOW</p>
               </span>
             </div>
@@ -30,7 +30,7 @@ const Blog = () => {
           <hr />
           <div>
             <div>
-              <BackHandIcon /> 
+              <BackHandIcon />
             </div>
           </div>
           <div>
