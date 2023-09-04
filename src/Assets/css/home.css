@@ -26,3 +26,22 @@
     background-position: center;
     background-size: cover;
 }
+
+.blog-page {
+    margin: auto;
+    width: 70%;
+}
+
+.che {
+    width: 48px;
+    height: 48px;
+    border-radius: 70px;
+}
+
+.chegue {
+    display: flex;
+    /* margin-left: 10px; */
+}
+.blog-che{
+    margin-left: 10px;
+}
