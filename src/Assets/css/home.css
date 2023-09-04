@@ -164,6 +164,16 @@
     padding-bottom: 7px;
 }
 
+#dropdown-basic {
+    background: none;
+    outline: none;
+    border: none;
+    color: #000;
+}
+
+.dropdown {
+    padding: 10px !important;
+}
 
 /* ==========side-section-home start===== */
 
@@ -171,15 +181,32 @@
     border-left: 2px solid #ccc;
     height: auto;
     position: sticky;
-    bottom: 0;
+    top: 25%;
     padding-left: 20px;
 }
+<<<<<<< HEAD
 
 .Recommended-topics {
     height: 100vh;
+=======
+>>>>>>> 23c87f019882b9fdc1c6a6432b8021c34acc03da
 
+.Recommended-topics {
+    height: 100vh;
 }
 
+.recomment {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recomment p {
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+}
 
 /* ==========side-section-home end===== */
 /* ================blog details========= */

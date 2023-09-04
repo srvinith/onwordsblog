@@ -45,7 +45,7 @@ const Navbars = () => {
             <Nav className="me-auto mx-4">
               <Nav.Link href="/" className='mx-4'>Home</Nav.Link>
               <Nav.Link href="/blog" className='mx-4'>Blog</Nav.Link>
-              <NavDropdown title="Categories" id="collasible-nav-dropdown" className='mx-4'>
+              <NavDropdown title="Categories" id="collasible-nav-dropdown" className='collapse-nav'>
                 <NavDropdown.Item href="">Action</NavDropdown.Item>
                 <NavDropdown.Item href="">
                   Another action
