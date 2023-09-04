@@ -184,6 +184,12 @@
     top: 25%;
     padding-left: 20px;
 }
+<<<<<<< HEAD
+
+.Recommended-topics {
+    height: 100vh;
+=======
+>>>>>>> 23c87f019882b9fdc1c6a6432b8021c34acc03da
 
 .Recommended-topics {
     height: 100vh;
@@ -203,5 +209,37 @@
 }
 
 /* ==========side-section-home end===== */
-
 /* ================blog details========= */
+/* blog */
+.blog-page {
+    width: 70%;
+    margin: auto;
+}
+
+.che {
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+}
+
+.chegue {
+    display: flex;
+    
+}
+.blog-che{
+    margin-left: 10px;
+}
+.blog-icon{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.blog-para{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.blog-icons{
+justify-content: space-between;
+}
+/* blog end */
