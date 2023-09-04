@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Link } from 'react-router-dom';
 // images //
-// import che from '../Assets/images/che.webp'
+import che from '../Assets/images/che.webp'
 import BackHandIcon from '@mui/icons-material/BackHand';
 
 // images //
