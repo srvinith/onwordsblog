@@ -77,7 +77,6 @@ const Navbars = () => {
                   <input type="text" placeholder='search Here...' />
                   <SearchIcon className='search-icon-btn' onClick={() => setSearch(false)} />
                 </div>
-
               </div>
             </div>
           </div>

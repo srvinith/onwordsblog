@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 // import { Link } from 'react-router-dom';
 // images //
 import che from '../Assets/images/che.webp'
@@ -45,7 +45,21 @@ const Blog = () => {
               <ChatBubbleOutlineIcon />
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12"></div>
+                  <div className="col-md-4"></div>
+                  <div className="col-md-6">
+                    <div class="comment-list">
+                      <div class="main-ctrls">
+                        <button class="delete-all-btn ctrl-btns">Delete all comments</button>
+                        <button class="start-new-btn ctrl-btns">Add comment</button>
+                        <div class="comment-bar hidden">
+                          <input class="comment-input"></input>
+                          <button class="close-new-btn secondary-ctrl-btns">Close</button>
+                          <button class="add-new-btn ctrl-btns">Add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-2"></div>
                 </div>
               </div>
             </div>
