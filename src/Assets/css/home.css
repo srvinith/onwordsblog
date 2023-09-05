@@ -223,22 +223,32 @@
 
 .chegue {
     display: flex;
-    
+
 }
-.blog-che{
+
+.blog-che {
     margin-left: 10px;
 }
-.blog-icon{
+
+.blog-icon {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
 }
-.blog-para{
+
+.blog-para {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    
+
 }
-.blog-icons{
-justify-content: space-between;
+
+.blog-icons {
+    justify-content: space-between;
 }
+
+.bookmark-blog {
+    display: flex;
+}
+
 /* blog end */

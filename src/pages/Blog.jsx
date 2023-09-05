@@ -1,17 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 // import { Link } from 'react-router-dom';
 // images //
 import che from '../Assets/images/che.webp'
 import BackHandIcon from '@mui/icons-material/BackHand';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import NotStartedIcon from '@mui/icons-material/NotStarted';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // images //
 
 
 const Blog = () => {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const toggleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
+  };
+  const notify = () => toast("bookmarked successfully!");
   return (
     <div className="container">
       <div className=" blog-page">
@@ -35,9 +43,22 @@ const Blog = () => {
             <div className='blog-icons'>
               <BackHandIcon />
               <ChatBubbleOutlineIcon />
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-12"></div>
+                </div>
+              </div>
             </div>
             <div>
-              < BookmarkBorderIcon />
+              <div className="markable-icon bookmark-blog">
+                <div className="bookmark">
+                  <div className="unbookmark" onClick={toggleBookmark}>
+                    {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon onClick={notify} />}
+                    <ToastContainer />
+                  </div>
+                </div>
+              </div>
+              {/* < BookmarkBorderIcon /> */}
               <NotStartedIcon />
               <IosShareIcon />
             </div>
