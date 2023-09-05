@@ -223,23 +223,28 @@
 
 .chegue {
     display: flex;
-    
+
 }
-.blog-che{
+
+.blog-che {
     margin-left: 10px;
 }
-.blog-icon{
+
+.blog-icon {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
 }
-.blog-para{
+
+.blog-para {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    
+
 }
-.blog-icons{
-justify-content: space-between;
+
+.blog-icons {
+    justify-content: space-between;
 }
 /* blog end */
 
@@ -320,5 +325,99 @@ justify-content: space-between;
 .lockicons{
     size: 10px;
     color: #ccc;
+
+
+
+
+
+    
 }
 /* ==========profile End========== */
+
+.bookmark-blog {
+    display: flex;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+}
+
+.main-ctrls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #1B1D22;
+}
+
+.comment-main {
+    background-color: #1B1D22;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.upvote-count {
+    padding: 4px 12px;
+    background-color: #1F242C;
+    border-radius: 4px;
+}
+
+.comment-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comment-text {
+    margin-bottom: 12px;
+}
+
+.ctrl-btns {
+    background-color: #1F242C;
+    border: 1px solid #66E84C;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    width: fit-content;
+    color: #FBFCFC;
+}
+
+.secondary-ctrl-btns {
+    background-color: transparent;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    width: fit-content;
+    color: #FBFCFC;
+}
+
+.active-btn {
+    background-color: #66E84C;
+    color: #1F242C;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #66E84C;
+    color: #FBFCFC;
+}
+
+.hidden {
+    display: none;
+}
+
+.children {
+    margin-left: 24px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* blog end */

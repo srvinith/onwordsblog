@@ -432,13 +432,13 @@ const Home = () => {
                     <h5>Recommended topics</h5>
 
                     <div className="recomment">
-                    <p>Programming</p>
-                    <p>Data Science</p>
-                    <p>Self Improvement</p>
-                    <p>Writing</p>
-                    <p>relationships</p>
-                    <p>Machine Learning</p>
-                    <p>Productivity</p>
+                      <p>Programming</p>
+                      <p>Data Science</p>
+                      <p>Self Improvement</p>
+                      <p>Writing</p>
+                      <p>relationships</p>
+                      <p>Machine Learning</p>
+                      <p>Productivity</p>
                     </div>
                   </div>
                 </div>
