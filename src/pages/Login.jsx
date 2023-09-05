@@ -7,25 +7,29 @@ import { Link } from 'react-router-dom'
 const Login = () => {
     return (
         <>
-            <div className="login-box " id='login'>
+           <div className="login-bg">
+           <div className="login-box " id='login'>
+                <form action="/profile">
                 <div className="signin">
                     <h2>Login</h2>
                     <div className="form-group">
                         <EmailIcon />
-                        <input type="email" placeholder='Email' />
+                        <input type="email" placeholder='Email'required />
                     </div>
                     <div className="form-group">
                         <LockIcon />
-                        <input type="password" placeholder='Password' />
+                        <input type="password" placeholder='Password'  required/>
                     </div>
 
                     <Link to="/forgot">Forgot Password</Link> <br />
                     <Link to="/register">Register</Link> <br />
 
-                    <button className='btn btn-primary mt-3'>Login</button>
+                    <button className='button2 mt-3' type='submit'>Login</button>
                 </div>
+                </form>
 
             </div>
+           </div>
         </>
     )
 }

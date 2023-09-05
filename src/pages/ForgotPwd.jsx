@@ -6,23 +6,27 @@ import {Link} from 'react-router-dom'
 const ForgotPwd = () => {
   return (
     <>
-    <div className="login-box ">
-          <div className="signin">
+   <div className="login-bg">
+   <div className="login-box ">
+        <form action="/logins">
+        <div className="signin">
             <h2>Forgot Password</h2>
             <div className="form-group">
               <EmailIcon />
-              <input type="email" placeholder='Email' />
+              <input type="email" placeholder='Email' required/>
             </div>
             <div className="form-group">
               <LockIcon />
-              <input type="password" placeholder='Password' />
+              <input type="password" placeholder='Password' required/>
             </div>
             <Link to="/register">Register</Link> <br />
             <Link to="/logins">Login</Link> <br />
-            <button className='btn btn-primary mt-3'>Submit</button>
+            <button className='button2 mt-3' type='submit'>Submit</button>
           </div>
+        </form>
 
         </div> 
+   </div>
     
     </>
   )

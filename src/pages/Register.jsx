@@ -6,27 +6,31 @@ import PersonIcon from '@mui/icons-material/Person';
 const Register = () => {
     return (
         <>
-            <div className="login-box ">
-                <div className="signin">
+           <div className="login-bg">
+           <div className="login-box ">
+              <form action="/logins">
+              <div className="signin">
                     <h2>Signin</h2>
                     <div className="form-group">
                         <PersonIcon />
-                        <input type="text" placeholder='Name' />
+                        <input type="text" placeholder='Name'  required/>
                     </div>
                     <div className="form-group">
                         <EmailIcon />
-                        <input type="email" placeholder='Email' />
+                        <input type="email" placeholder='Email' required/>
                     </div>
                     <div className="form-group">
                         <LockIcon />
-                        <input type="password" placeholder='Password' />
+                        <input type="password" placeholder='Password' required/>
                     </div>
                     <Link to="/forgot" >Forgot Password</Link> <br />
                     <Link to="/logins" >Login</Link> <br />
-                    <button className='btn btn-primary mt-3'>Signin</button>
+                    <button className='button2 mt-3' type='submit'>Signin</button>
                 </div>
 
+              </form>
             </div>
+           </div>
         </>
     )
 }
