@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link} from 'react-router-dom'
 
 
-// --------imgs
+// --------imgs---------//
 import Logo from './Assets/images/logos.png'
 // -----icons
 
@@ -21,7 +21,7 @@ const Navbars = () => {
 
  
   const [search, setSearch] = useState(false)
-
+  
 
   return (
     <>
@@ -57,7 +57,7 @@ const Navbars = () => {
             <Navbar.Collapse className="justify-content-end">
               <div className="end-nav-li">
                 <Link to="/logins">
-                <PersonIcon className='icon-nav' />
+                <PersonIcon className='icon-nav text-dark' />
                 </Link>
                 
                 <NotificationsIcon className='icon-nav' />

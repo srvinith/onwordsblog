@@ -9,6 +9,9 @@ import Blog from "./pages/Blog"
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPwd from './pages/ForgotPwd';
+import Profile from './pages/Profile';
+import ProfileForm from "./pages/ProfileForm";
+
 
 
 function App() {
@@ -24,6 +27,10 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />}/>
+        <Route path="/profileform" element={<ProfileForm />}/>
+    
+
       </Routes>
 
     </div>
