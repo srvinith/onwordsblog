@@ -3,6 +3,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
 import PersonIcon from '@mui/icons-material/Person';
+import { Close } from '@mui/icons-material';
 const Register = () => {
     return (
         <>
@@ -10,6 +11,7 @@ const Register = () => {
            <div className="login-box ">
               <form action="/logins">
               <div className="signin">
+              <Link to='/logins'><Close  className='closeBtn'/></Link>
                     <h2>Signin</h2>
                     <div className="form-group">
                         <PersonIcon />

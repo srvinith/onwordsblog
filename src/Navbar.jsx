@@ -57,7 +57,7 @@ const Navbars = () => {
             <Navbar.Collapse className="justify-content-end">
               <div className="end-nav-li">
                 <Link to="/logins">
-                <PersonIcon className='icon-nav' />
+                <PersonIcon className='icon-nav text-dark' />
                 </Link>
                 
                 <NotificationsIcon className='icon-nav' />
