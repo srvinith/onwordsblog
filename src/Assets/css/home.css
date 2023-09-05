@@ -235,6 +235,7 @@
     justify-content: space-between;
     padding: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .blog-para {
@@ -244,12 +245,13 @@
 }
 
 .blog-icons {
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
-.bookmark-blog {
+/* .bookmark-blog {
     display: flex;
-}
+    background-color: red;
+} */
 
 .comment-list {
     display: flex;
@@ -331,6 +333,10 @@ input {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.blogger{
+    display: flex;
 }
 
 /* blog end */

@@ -20,6 +20,8 @@ const Blog = () => {
     setIsBookmarked(!isBookmarked);
   };
   const notify = () => toast("bookmarked successfully!");
+  const [comment,setComment]=useState(false)
+  
   return (
     <div className="container">
       <div className=" blog-page">
@@ -42,11 +44,10 @@ const Blog = () => {
           <div className='blog-icon'>
             <div className='blog-icons'>
               <BackHandIcon />
-              <ChatBubbleOutlineIcon />
-              <div className="container">
+              <ChatBubbleOutlineIcon  onClick={()=>{setComment(!comment)}}/>
+             { comment?<div className="container">
                 <div className="row">
-                  <div className="col-md-4"></div>
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                     <div class="comment-list">
                       <div class="main-ctrls">
                         <button class="delete-all-btn ctrl-btns">Delete all comments</button>
@@ -59,12 +60,12 @@ const Blog = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-2"></div>
+
                 </div>
-              </div>
+              </div>:null}
             </div>
-            <div>
-              <div className="markable-icon bookmark-blog">
+            <div className='blogger'>
+              <div className=" bookmark-blog">
                 <div className="bookmark">
                   <div className="unbookmark" onClick={toggleBookmark}>
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon onClick={notify} />}
