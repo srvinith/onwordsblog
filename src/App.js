@@ -11,6 +11,8 @@ import Register from './pages/Register';
 import ForgotPwd from './pages/ForgotPwd';
 import Profile from './pages/Profile';
 import ProfileForm from "./pages/ProfileForm";
+import CreateBlog from "./pages/CreateBlog";
+import BlogStore from "./pages/BlogStore"
 
 
 
@@ -29,6 +31,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />}/>
         <Route path="/profileform" element={<ProfileForm />}/>
+        <Route path="/createBlog" element={<CreateBlog />}/>
+        <Route path="/blogstore" element={<BlogStore />}/>
     
 
       </Routes>

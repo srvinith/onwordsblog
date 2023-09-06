@@ -33,7 +33,7 @@ const profile = () => {
                                     <div className="">
                                         <Dropdown>
                                             <Dropdown.Toggle id="dropdown-basic">
-                                            <Link className="my-anchor-element text-dark"><MoreHorizRounded /></Link>
+                                                <Link className="my-anchor-element text-dark"><MoreHorizRounded /></Link>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item className='dropdown' href="#">Bookmark List</Dropdown.Item>
@@ -41,15 +41,11 @@ const profile = () => {
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <p>
-                                        
-                                        <Tooltip anchorSelect=".my-anchor-element" place="top">
-                                            more
-                                        </Tooltip>
-
-
-                                    </p>
+                                            <Tooltip anchorSelect=".my-anchor-element" place="top">
+                                                more
+                                            </Tooltip>
+                                        </p>
                                     </div>
-                      
                                 </div>
                             </div>
                         </div>
