@@ -23,195 +23,7 @@ const Blog = () => {
   };
   const notify = () => toast("bookmarked successfully!");
   const [comment, setComment] = useState(false)
-  class ActionBar extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        liked: false,
-        marked: false
-      }
-    }
-
-    toggleLike = () => {
-      let self = this;
-      this.props.like(!self.state.liked);
-      this.setState({ liked: !self.state.liked });
-    }
-
-    markPost = () => {
-      let self = this;
-      this.setState({ marked: !self.state.marked });
-    }
-
-    startComment = () => {
-      document.querySelector().focus();
-    }
-
-    render() {
-      return (
-        <div className="card-action-bar">
-          <a onClick={this.toggleLike}><i className={this.state.liked ? "fas fa-heart" : "far fa-heart"} /></a>
-          <a onClick={this.markPost}><i className={this.state.marked ? "fas fa-bookmark" : "far fa-bookmark"} /></a>
-        </div>
-      )
-    }
-  }
-
-  class LikeCounter extends React.Component {
-    render() {
-      return (
-        <div className="card-views">
-          <div className="card-view-count">{this.props.likes} likes</div>
-        </div>
-      );
-    }
-  }
-
-  class Comment extends React.Component {
-    render() {
-      return (
-        <>
-          <div className="comment">
-            <a className="user">{this.props.user}</a>
-            {this.props.comment}
-            <div className="timestamp">{this.props.timestamp}</div>
-          </div>
-        </>
-      );
-    }
-  }
-
-  class CommentBox extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        user: "codepen.person",
-        comment: null
-      }
-    }
-
-    updateComment(e) {
-      this.setState({ [e.target.name]: e.target.value });
-    }
-
-    submitComment = () => {
-      let comment = { ...this.state };
-      if (comment.comment !== null || comment.comment === "") {
-        this.props.submit(comment);
-        this.setState({ comment: "" });
-      }
-    }
-
-    render() {
-      let buttonClass = this.state.comment === null || this.state.comment === "" ? "" : "postable";
-      return (
-        <>
-          <input name="comment" placeholder="Add a comment..." value={this.state.comment} default="comment" onChange={e => { this.updateComment(e) }} />
-          <button className={buttonClass} onClick={this.submitComment}>Post</button>
-        </>
-      );
-    }
-  }
-
-  class CommentController extends React.Component {
-    render() {
-      return (
-        <>
-          <div className="poster-comment"></div>
-          <div className="post-comments">
-            {this.props.comments.map((comment) => <Comment user={comment.user} comment={comment.comment} />)}
-          </div>
-        </>
-      );
-    }
-  }
-
-  class Card extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        likes: 0,
-        poster: {
-          name: "",
-          profile_picture: ""
-        },
-        image: "",
-        comments: []
-      }
-    }
-
-    componentDidMount() {
-      this.setState({ ...this.props.postData });
-    }
-
-    likeButton = (liked) => {
-      if (liked) {
-        this.setState({ likes: this.state.likes + 1 });
-      } else {
-        this.setState({ likes: this.state.likes - 1 });
-      }
-    }
-
-    updateComments = (data) => {
-      console.log("updating comments");
-      let state = this.state;
-      console.log(data);
-      this.setState({ comments: [data, ...state.comments] });
-    }
-
-    render() {
-      return (
-        <div className="card">
-          <div className="card-top">
-            <a className="card-poster-image-container">
-              <img className="user-pfp" src={this.state.poster.profile_picture} />
-            </a>
-            <a className="card-poster-name">{this.state.poster.name}</a>
-          </div>
-          <div className="card-image-container">
-            <img src={this.state.image}></img>
-          </div>
-          <div className="card-middle">
-            <ActionBar like={this.likeButton} />
-            <LikeCounter likes={this.state.likes} />
-            <CommentController comments={this.state.comments} />
-          </div>
-          <div className="card-bottom">
-            <CommentBox submit={this.updateComments} />
-          </div>
-        </div>
-      );
-    }
-  }
-
-  class App extends React.Component {
-    state = {
-      posts: [
-        {
-          likes: 100,
-          poster: {
-            name: "turtlegal",
-            profile_picture: "https://placeimg.com/100/100/animals"
-          },
-          image: "https://placeimg.com/650/650/animals/sepia?t=1564211187934",
-          comments: [
-            { user: "comment_dude", comment: "This is a good pic!" },
-            { user: "bruh.guy", comment: "Bruh, what is this picture?" }
-          ]
-        }
-      ]
-    }
-    render() {
-      return (
-        <>
-          <Card postData={this.state.posts[0]} />
-        </>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('root'));
-
+  
 
   return (
     <div className="container">
@@ -242,22 +54,16 @@ const Blog = () => {
                   <Popup trigger=
                     {<ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} />}
                     position="right center" className='comment-sec'>
-                    <div>
-                      {/* <form action="">
+                    <div className="comment-sec">
+                      <form action="">
                         <label htmlFor="">Comment</label>
                         <input type="text" placeholder='Comment' />
-                        <button>Post</button>
-                      </form> */}
+                        <button>post</button>
+                      </form>
                       {/* <div>Add comment</div>
                       <div>Delete all comment</div> */}
                     </div>
                   </Popup>
-                  {/* comment */}
-                  <div id="root"></div>
-                  <div>Instagram like post!</div>
-                  <div>Please like this pen if you liked this work.</div>
-                  <div>7/27/2019</div>
-                  {/* comment */}
                 </div>
               </div>
               {/* {comment ? <div className="container">
@@ -345,8 +151,25 @@ const Blog = () => {
           </p>
         </div>
       </div>
+      <div className="contaniner">
+        <div className="row">
+          <div className="col-md-2"></div>
+          <div className="col-md-8">
+            <div>
+              <center>
+                <div className='comment-sec'>
+                 
+                </div>
+              </center>
+            </div>
+          </div>
+          <div className="col-md-2"></div>
+
+        </div>
+      </div>
     </div>
   )
 }
 
 export default Blog
+
