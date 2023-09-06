@@ -10,6 +10,8 @@ import NotStartedIcon from '@mui/icons-material/NotStarted';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 // images //
 
@@ -20,6 +22,8 @@ const Blog = () => {
     setIsBookmarked(!isBookmarked);
   };
   const notify = () => toast("bookmarked successfully!");
+  const [comment, setComment] = useState(false)
+
   return (
     <div className="container">
       <div className=" blog-page">
@@ -41,12 +45,25 @@ const Blog = () => {
           <hr />
           <div className='blog-icon'>
             <div className='blog-icons'>
-              <BackHandIcon />
-              <ChatBubbleOutlineIcon />
-              <div className="container">
+              <div className='trigger-btn'>
+                <BackHandIcon />
+                {/* <ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} /> */}
+                <div >
+
+                  <Popup trigger=
+                    {<ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} />}
+                    position="right center" className='comment-sec'>
+                    <div className="comment-sec">
+                      <div>Add comment</div>
+                      <div>Delete all comment</div>
+                    </div>
+                  </Popup>
+                </div>
+              </div>
+              {/* {comment ? <div className="container">
                 <div className="row">
-                  <div className="col-md-4"></div>
-                  <div className="col-md-6">
+                  <div className="col-md-12">
+
                     <div class="comment-list">
                       <div class="main-ctrls">
                         <button class="delete-all-btn ctrl-btns">Delete all comments</button>
@@ -57,19 +74,20 @@ const Blog = () => {
                           <button class="add-new-btn ctrl-btns">Add</button>
                         </div>
                       </div>
-                    </div>
+                    </div> 
                   </div>
-                  <div className="col-md-2"></div>
+
                 </div>
-              </div>
+              </div> : null} */}
             </div>
-            <div>
-              <div className="markable-icon bookmark-blog">
+            <div className='blogger'>
+              <div className=" bookmark-blog">
                 <div className="bookmark">
                   <div className="unbookmark" onClick={toggleBookmark}>
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon onClick={notify} />}
                     <ToastContainer />
                   </div>
+
                 </div>
               </div>
               {/* < BookmarkBorderIcon /> */}
