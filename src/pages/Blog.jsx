@@ -51,10 +51,12 @@ const Blog = () => {
                 <div >
 
                   <Popup trigger=
-                    { <ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} /> }
-                    position="right center">
-                    {/* <div>Add comment</div>
-                    <div>Delete all comment</div> */}
+                    {<ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} />}
+                    position="right center" className='comment-sec'>
+                    <div className="comment-sec">
+                      <div>Add comment</div>
+                      <div>Delete all comment</div>
+                    </div>
                   </Popup>
                 </div>
               </div>

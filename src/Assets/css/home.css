@@ -464,5 +464,11 @@ input {
 .trigger-btn{
     display: flex;
 }
+.comment-sec{
+    background-color: red;
+}
 
+.popup-comment{
+    background-color: red;
+}
 /* blog end */
