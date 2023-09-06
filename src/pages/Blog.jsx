@@ -10,6 +10,8 @@ import NotStartedIcon from '@mui/icons-material/NotStarted';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 // images //
 
@@ -20,8 +22,8 @@ const Blog = () => {
     setIsBookmarked(!isBookmarked);
   };
   const notify = () => toast("bookmarked successfully!");
-  const [comment,setComment]=useState(false)
-  
+  const [comment, setComment] = useState(false)
+
   return (
     <div className="container">
       <div className=" blog-page">
@@ -43,11 +45,23 @@ const Blog = () => {
           <hr />
           <div className='blog-icon'>
             <div className='blog-icons'>
-              <BackHandIcon />
-              <ChatBubbleOutlineIcon  onClick={()=>{setComment(!comment)}}/>
-             { comment?<div className="container">
+              <div className='trigger-btn'>
+                <BackHandIcon />
+                {/* <ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} /> */}
+                <div >
+
+                  <Popup trigger=
+                    { <ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} /> }
+                    position="right center">
+                    {/* <div>Add comment</div>
+                    <div>Delete all comment</div> */}
+                  </Popup>
+                </div>
+              </div>
+              {/* {comment ? <div className="container">
                 <div className="row">
                   <div className="col-md-12">
+
                     <div class="comment-list">
                       <div class="main-ctrls">
                         <button class="delete-all-btn ctrl-btns">Delete all comments</button>
@@ -58,11 +72,11 @@ const Blog = () => {
                           <button class="add-new-btn ctrl-btns">Add</button>
                         </div>
                       </div>
-                    </div>
+                    </div> 
                   </div>
 
                 </div>
-              </div>:null}
+              </div> : null} */}
             </div>
             <div className='blogger'>
               <div className=" bookmark-blog">
@@ -71,6 +85,7 @@ const Blog = () => {
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon onClick={notify} />}
                     <ToastContainer />
                   </div>
+
                 </div>
               </div>
               {/* < BookmarkBorderIcon /> */}

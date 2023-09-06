@@ -461,6 +461,8 @@ input {
 .blogger{
     display: flex;
 }
+.trigger-btn{
+    display: flex;
+}
 
 /* blog end */
-git
