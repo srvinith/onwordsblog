@@ -12,7 +12,9 @@ import ForgotPwd from './pages/ForgotPwd';
 import Profile from './pages/Profile';
 import ProfileForm from "./pages/ProfileForm";
 import CreateBlog from "./pages/CreateBlog";
-import BlogStore from "./pages/BlogStore"
+import BlogStore from "./pages/BlogStore";
+import Reg from "./pages/Reg"
+
 
 
 
@@ -33,6 +35,7 @@ function App() {
         <Route path="/profileform" element={<ProfileForm />}/>
         <Route path="/createBlog" element={<CreateBlog />}/>
         <Route path="/blogstore" element={<BlogStore />}/>
+        <Route path="/reg" element={<Reg />}/>
     
 
       </Routes>
