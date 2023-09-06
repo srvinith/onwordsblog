@@ -60,7 +60,7 @@ const Home = () => {
                   Publish your passions, your way <br />
                   Create a unique and beautiful blog easily.
                 </h2>
-                <Link to="#"><button className='btn btn-primary'>CreateBlog</button></Link>
+                <Link to="/createblog"><button className='btn btn-primary'>CreateBlog</button></Link>
               </div>
             </div>
           </div>
