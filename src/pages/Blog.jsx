@@ -12,7 +12,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 // images //
 
 
@@ -23,8 +24,44 @@ const Blog = () => {
   };
   const notify = () => toast("bookmarked successfully!");
   const [comment, setComment] = useState(false)
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newComment.trim() !== '') {
+      setComments([...comments, newComment]);
+      setNewComment('');
+    }
+  };
 
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+
+  const handleLikeClick = () => {
+    if (!isLiked) {
+      setLikeCount(likeCount + 1);
+    } else {
+      setLikeCount(likeCount - 1);
+    }
+    setIsLiked(!isLiked);
+  };
+
+  const shareContent = {
+    title: 'Share Title',
+    text: 'Share description or text goes here',
+    url: 'https://example.com', // URL to share
+  };
+
+  const handleShareClick = () => {
+    if (navigator.share) {
+      navigator.share(shareContent)
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      alert('Sharing is not supported on this device/browser.');
+    }
+  };
   return (
     <div className="container">
       <div className=" blog-page">
@@ -47,7 +84,13 @@ const Blog = () => {
           <div className='blog-icon'>
             <div className='blog-icons'>
               <div className='trigger-btn'>
-                <BackHandIcon />
+                {/* <BackHandIcon /> */}
+                <div>
+                  <span onClick={handleLikeClick}>
+                    {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+                  </span>
+                  <span>{likeCount} </span>
+                </div>
                 {/* <ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} /> */}
                 <div >
 
@@ -55,11 +98,24 @@ const Blog = () => {
                     {<ChatBubbleOutlineIcon onClick={() => { setComment(!comment) }} />}
                     position="right center" className='comment-sec'>
                     <div className="comment-sec">
-                      <form action="">
-                        <label htmlFor="">Comment</label>
-                        <input type="text" placeholder='Comment' />
-                        <button>post</button>
-                      </form>
+                      <div>
+                        <h6>Instagram Comments</h6>
+                        <form onSubmit={handleSubmit}>
+                          <input className='comment-section'
+                            type="text"
+                            placeholder="Add a comment..."
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                          />
+                          <button type="submit">Post</button>
+                        </form>
+                        
+                        <ul>
+                          {comments.map((comment, index) => (
+                            <li key={index}>{comment}</li>
+                          ))}
+                        </ul>
+                      </div>
 
                     </div>
                   </Popup>
@@ -79,7 +135,11 @@ const Blog = () => {
               </div>
               {/* < BookmarkBorderIcon /> */}
               <NotStartedIcon />
-              <IosShareIcon />
+              {/* <IosShareIcon /> */}
+              <div>
+                <p onClick={handleShareClick}> <IosShareIcon />
+                </p>
+              </div>
             </div>
           </div>
           <hr />
@@ -96,7 +156,7 @@ const Blog = () => {
 
               Aimlessly scrolling the LinkedIn updates, a little voice started creeping up inside reminding me of the uncertainties ahead:</p>
             <div className='blog-para'>
-              <i>“What am I doing?”</i><br></br>
+              <i>“What am I doing?”</i>
               <i>“Look at everyone else getting promotions…am I wasting my time out here?”
               </i><br></br>
               <i>“What do I have to show for my year off?”</i>
@@ -120,11 +180,14 @@ const Blog = () => {
 
             But the truth is, external validation doesn’t lead us to contentment and fulfillment. It only keeps us chasing more.
 
-            I finally recognized that if my goal was to heal a toxic relationship with productivity, I couldn’t simply replace an endless pursuit of work achievements with an endless pursuit of bucket list items. Otherwise, I’d still be chained to expectations and forever hustling toward more superficial embellishments to enhance my “life resume.”
+            I finally recognized that if my goal was to heal a toxic relationship with productivity, I couldn’t
+            simply replace an endless pursuit of work achievements with an endless pursuit of bucket list items. Otherwise, I’d still be chained to expectations and forever hustling toward more superficial embellishments to enhance my “life resume.”
           </p>
+
           <h3>I want to live a good life, not just appear to be living one.</h3>
           <p className='blog-para'>
-            This is completely an internal shift. To reach this point, I first need to have a clear enough picture of what kind of life I actually want to live. We will perpetually chase after some arbitrary metric and feel behind unless we can answer for ourselves this age-old question: “Do I want what I want because I truly want it, or because society said I want it?”
+            This is completely an internal shift. To reach this point, I first need to have a clear enough picture of what kind of life I actually want to live. We will perpetually chase after some
+            arbitrary metric and feel behind unless we can answer for ourselves this age-old question: “Do I want what I want because I truly want it, or because society said I want it?”
 
             When we aren’t clear on our version of success, we end up measuring our lives against someone else’s definition of success. That’s why we feel behind in life.
 
