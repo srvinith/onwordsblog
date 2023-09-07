@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import EmailIcon from '@mui/icons-material/Email';
 import { Link } from 'react-router-dom'
 import { Close } from '@mui/icons-material';
 import OtpInput from 'react-otp-input';
@@ -16,12 +15,13 @@ const VerifyOtp = () => {
                             <Link to='/logins'><Close className='closeBtn' /></Link>
                             <h2>Otp Verfiy</h2>
                             <div className="form-group">
-                                <EmailIcon />
+                               
                                 <OtpInput
+                                className='otp'
                                     value={otp}
                                     onChange={setOtp}
                                     numInputs={6}
-                                    renderSeparator={<span>-</span>}
+                                    renderSeparator={<span className='otp-inp'>-</span>}
                                     renderInput={(props) => <input {...props} />}
                                 />
                             </div>

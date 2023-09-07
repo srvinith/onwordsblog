@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import { Link } from 'react-router-dom';
 // images //
 import che from '../Assets/images/che.webp'
-import BackHandIcon from '@mui/icons-material/BackHand';
+
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';

@@ -8,7 +8,7 @@ const ForgotPwd = () => {
     <>
    <div className="login-bg">
    <div className="login-box ">
-        <form action="/lverfiyotp">
+        <form action="/verfiyotp">
         <div className="signin">
         <Link to='/logins'><Close  className='closeBtn'/></Link>
             <h2>Forgot Password</h2>

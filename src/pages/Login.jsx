@@ -15,27 +15,22 @@ const Login = () => {
     const handleLogin = async () => {
         try {
             const response = await axios.post('http://192.168.1.8:8005/verify_login', {
-              email,
-              password,
-            }, {
-              headers: {
-                'Content-Type': 'application/json',
-              },
+                email,
+                password,
             });
-          
+
             if (response.status === 200) {
-              const { user_id, user_email } = response.data;
-              setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-              window.location.href = '/verfiyotp'; // Redirect to the home page
+                const { user_id, user_email } = response.data;
+                setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
+                window.location.href='/'
             }
-            console.log(response.data); // Log the response data
-          } catch (error) {
+        } catch (error) {
             if (error.response && error.response.status === 401) {
-              setMessage('Invalid credentials');
+                setMessage('Invalid credentials');
             } else {
-              setMessage('An error occurred during login.');
+                setMessage('An error occurred during login.');
             }
-          }
+        }
     };
 
 
@@ -45,7 +40,7 @@ const Login = () => {
                 <div className="login-box " id='login'>
                     <p>{message}</p>
 
-                    <form action="/profile">
+                    <form>
                         <div className="signin">
                             <Link to='/'><Close className='closeBtn' /></Link>
                             <h2>Login</h2>
