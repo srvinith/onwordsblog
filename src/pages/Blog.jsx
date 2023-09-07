@@ -23,7 +23,7 @@ const Blog = () => {
   };
   const notify = () => toast("bookmarked successfully!");
   const [comment, setComment] = useState(false)
-  
+
 
   return (
     <div className="container">
@@ -60,31 +60,12 @@ const Blog = () => {
                         <input type="text" placeholder='Comment' />
                         <button>post</button>
                       </form>
-                      {/* <div>Add comment</div>
-                      <div>Delete all comment</div> */}
+
                     </div>
                   </Popup>
                 </div>
               </div>
-              {/* {comment ? <div className="container">
-                <div className="row">
-                  <div className="col-md-12">
-
-                    <div class="comment-list">
-                      <div class="main-ctrls">
-                        <button class="delete-all-btn ctrl-btns">Delete all comments</button>
-                        <button class="start-new-btn ctrl-btns">Add comment</button>
-                        <div class="comment-bar hidden">
-                          <input class="comment-input"></input>
-                          <button class="close-new-btn secondary-ctrl-btns">Close</button>
-                          <button class="add-new-btn ctrl-btns">Add</button>
-                        </div>
-                      </div>
-                    </div> 
-                  </div>
-
-                </div>
-              </div> : null} */}
+              { }
             </div>
             <div className='blogger'>
               <div className=" bookmark-blog">
@@ -158,7 +139,7 @@ const Blog = () => {
             <div>
               <center>
                 <div className='comment-sec'>
-                 
+
                 </div>
               </center>
             </div>
