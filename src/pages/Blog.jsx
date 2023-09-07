@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 // import { Link } from 'react-router-dom';
 // images //
 import che from '../Assets/images/che.webp'
-import BackHandIcon from '@mui/icons-material/BackHand';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
@@ -14,6 +13,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+
 // images //
 
 
@@ -193,22 +193,6 @@ const Blog = () => {
 
             True freedom requires patience and understanding of where we are and where we are trying to go. Finding our own freedom is the real work of our lives.
           </p>
-        </div>
-      </div>
-      <div className="contaniner">
-        <div className="row">
-          <div className="col-md-2"></div>
-          <div className="col-md-8">
-            <div>
-              <center>
-                <div className='comment-sec'>
-
-                </div>
-              </center>
-            </div>
-          </div>
-          <div className="col-md-2"></div>
-
         </div>
       </div>
     </div>
