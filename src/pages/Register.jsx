@@ -4,45 +4,71 @@ import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
 import PersonIcon from '@mui/icons-material/Person';
 import { Close } from '@mui/icons-material';
+import axios from 'axios'
 
 
 const Register = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+    });
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [registrationError, setRegistrationError] = useState(null);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+
+    };
+    const registerUser = async () => {
+
 
         try {
-            // Send registration data to your FastAPI backend
-            const response = await fetch('http://192.168.1.8:8005/register_user', {
-                method: 'POST',
+            console.log("sf")
+            const response = await axios.post('http://192.168.1.8:8005/register_user', formData, {
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name, email, password }),
             });
-            console.log("response",response.content)
 
-            if (response.ok) {
-                // Registration successful, redirect to another page
-                window.location.href = '/category_recommendations';
+            // Log the request data and response for debugging purposes
+            console.log('Request Data:', formData);
+            console.log('Response:', response);
+
+            if (response.status === 200) {
+                // Registration was successful, you can handle the response data here
+                const responseData = response.data;
+                console.log('Registration successful:', responseData);
+                window.location.href='/logins'
+
+                // Optionally, you can redirect the user to the login page or perform other actions
             } else {
-                // Handle registration failure
-                console.error('Registration failed');
+                // Handle registration failure (e.g., display an error message)
+                setRegistrationError('Registration failed');
             }
         } catch (error) {
-            console.error('Error during registration:', error);
+            // Handle registration errors (e.g., show an error message)
+            console.error('Registration failed:', error);
+            setRegistrationError('Registration failed last');
         }
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        registerUser();
+    };
+
 
     return (
         <>
             <div className="login-bg">
                 <div className="login-box ">
-                    <form action="" onSubmit={handleSubmit}>
+                {registrationError && <p>{registrationError}</p>}
+                    <form onSubmit={handleSubmit}>
                         <div className="signin">
                             <Link to='/logins'><Close className='closeBtn' /></Link>
 
@@ -51,33 +77,27 @@ const Register = () => {
                                 <PersonIcon />
                                 <input
                                     type="text"
-                                    id="name"
                                     name="name"
-                                    required
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    value={formData.name}
+                                    onChange={handleInputChange}
                                 />
                             </div>
                             <div className="form-group">
                                 <EmailIcon />
                                 <input
                                     type="email"
-                                    id="email"
                                     name="email"
-                                    required
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                 />
                             </div>
                             <div className="form-group">
                                 <LockIcon />
                                 <input
                                     type="password"
-                                    id="password"
                                     name="password"
-                                    required
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={formData.password}
+                                    onChange={handleInputChange}
                                 />
 
                             </div>
