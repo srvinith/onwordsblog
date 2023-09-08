@@ -6,27 +6,38 @@ import { Close } from '@mui/icons-material';
 import axios from 'axios'
 
 
+
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userId, setUserId] = useState('');
 
     const handleLogin = async () => {
+        console.log(handleLogin)
         try {
             const response = await axios.post('http://192.168.1.8:8005/verify_login', {
                 email,
                 password,
             });
 
+
             if (response.status === 200) {
                 const { user_id, user_email } = response.data;
+                setUserEmail(user_email)
+                setUserId(user_id)
                 setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-                window.location.href='/'
+                window.location.href = '/'
+
+
             }
+
         } catch (error) {
             if (error.response && error.response.status === 401) {
                 setMessage('Invalid credentials');
+                console.log('passwords error');
             } else {
                 setMessage('An error occurred during login.');
             }
@@ -37,38 +48,41 @@ const Login = () => {
     return (
         <>
             <div className="login-bg">
-                <div className="login-box " id='login'>
+                <div className="login-box" id='login'>
                     <p>{message}</p>
 
-                    <form>
-                        <div className="signin">
-                            <Link to='/'><Close className='closeBtn' /></Link>
-                            <h2>Login</h2>
-                            <div className="form-group">
-                                <EmailIcon />
-                                <input
-                                    type="email"
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <LockIcon />
-                                <input
-                                    type="password"
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </div>
-
-                            <Link to="/forgot">Forgot Password</Link> <br />
-                            <Link to="/register">Register</Link> <br />
-
-                            <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
+                    <div className="signin">
+                        <Link to='/'><Close className='closeBtn' /></Link>
+                        <h2>Login</h2>
+                        <div className="form-group">
+                            <EmailIcon />
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
-                    </form>
+                        <div className="form-group">
+                            <LockIcon />
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+
+                        <Link to="/forgot">Forgot Password</Link> <br />
+                        <Link to="/register">Register</Link> <br />
+
+                        <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
+                    </div>
+                    <div className="d-none">
+                        <p>userEmail:{userEmail}</p>
+                        <p>userId:{userId}</p>
+                    </div>
+
 
                 </div>
             </div>
