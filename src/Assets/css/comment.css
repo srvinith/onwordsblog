@@ -64,12 +64,9 @@
 .comment-background input {
     outline: none;
     width: 60%;
-    height: 40px;
-
+    height: 28px;
 }
 
-.comment-background form {
-    background-color: red;
-}
+
 
 /* blog end */
