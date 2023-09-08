@@ -1,28 +1,98 @@
-import React from 'react'
-import EmailIcon from '@mui/icons-material/Email';
-import {Link} from 'react-router-dom'
-import { Close } from '@mui/icons-material';
+import React, { useState } from 'react'
+// import EmailIcon from '@mui/icons-material/Email';
+// import {Link} from 'react-router-dom'
+// import { Close } from '@mui/icons-material';
+import SendIcon from '@mui/icons-material/Send';
+import axios from 'axios'
+import OtpInput from 'react-otp-input';
 
 const ForgotPwd = () => {
+
+  const [email, setEmail] = useState('');
+  const [otp, setOtp] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  
+  const sendOtp = async () => {
+    try {
+      const response = await axios.post('http://192.168.1.8:8005/send_otp', { email });
+      setMessage(response.data.message);
+      if (response.data.message === 'OTP sent successfully') {
+        setMessage('OTP sent successfully');
+        setError('');
+      }
+    } catch (error) {
+      if (error.response) {
+        const errorMessage = error.response.data.message;
+
+        // Check for the specific error message
+        if (errorMessage === 'Email not found in Firebase Authentication') {
+          setMessage('');
+          setError('Email not found in Firebase Authentication. Please register first.');
+        } else {
+          setMessage('');
+          setError('An unknown error occurred while sending OTP.');
+        }
+      } else {
+        setMessage('');
+        setError('An unknown error occurred while sending OTP.');
+      }
+    }
+  };
+
+  const verifyOtp = async () => {
+    try {
+      const response = await axios.post('http://192.168.1.8:8005/verify_otp', { email, otp });
+      setMessage(response.data.message);
+    } catch (error) {
+      setMessage('Invalid OTP. Please try again.');
+    }
+  };
+
+  const resetPassword = async () => {
+    try {
+      const response = await axios.post('http://192.168.1.8:8005/reset_password', { email, new_password: newPassword });
+      setMessage(response.data.message);
+    } catch (error) {
+      setMessage('Password reset failed. Please try again.');
+    }
+  };
+
   return (
     <>
-   <div className="login-bg">
-   <div className="login-box ">
-        <form action="/verfiyotp">
-        <div className="signin">
-        <Link to='/logins'><Close  className='closeBtn'/></Link>
-            <h2>Forgot Password</h2>
-            <div className="form-group">
-              <EmailIcon />
-              <input type="email" placeholder='Email' required/>
-            </div>
-            <button className='button2 mt-3' type='submit'>Sent Otp</button>
-          </div>
-        </form>
+      <div className="login-bg">
+        <div className="login-box ">
+          <div className="">
+            <div className="signin">
+              <p>{error}</p>
+              <h2 className='fs-4'>OTP and Password Reset</h2>
+              <div className='form-group'>
+                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <button className='form-btn' onClick={sendOtp}><SendIcon /></button>
+              </div>
+              <div className='form-group'>
+               
+                <OtpInput
+                  value={otp}
+                  onChange={setOtp}
+                  numInputs={6}
+                  renderSeparator={<span>-</span>}
+                  renderInput={(props) => <input {...props} />}
+                />
+                <button className='form-btn' onClick={verifyOtp}>Verify OTP</button>
+              </div>
+              <div className='form-group'>
+                <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
 
-        </div> 
-   </div>
-    
+              </div>
+              <button className=' btn btn-secondary' onClick={resetPassword}>Reset Password</button>
+              <p>{message}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }
