@@ -14,6 +14,7 @@ import ProfileForm from "./pages/ProfileForm";
 import CreateBlog from "./pages/CreateBlog";
 import BlogStore from "./pages/BlogStore";
 import VerifyOtp from "./pages/VerifyOtp";
+import Comment from "./pages/Comment";
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/createBlog" element={<CreateBlog />}/>
         <Route path="/blogstore" element={<BlogStore />}/>
         <Route path="/verfiyotp" element={<VerifyOtp/>}/>
+        <Route path="/comment" element={<Comment />}/>
     
         
 
