@@ -67,11 +67,11 @@ const Register = () => {
         <>
             <div className="login-bg">
                 <div className="login-box ">
-                {registrationError && <p>{registrationError}</p>}
+               
                     <form onSubmit={handleSubmit}>
                         <div className="signin">
                             <Link to='/logins'><Close className='closeBtn' /></Link>
-
+                            {registrationError && <p>{registrationError}</p>}
                             <h2>Signin</h2>
                             <div className="form-group">
                                 <PersonIcon />

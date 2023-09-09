@@ -50,16 +50,16 @@ const Navbars = () => {
                   </NavDropdown.Item>
                   <NavDropdown.Item href="">Data Science</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/about" className='mx-4'>About</Nav.Link>
-                <Nav.Link href="/contact" className='mx-4'>Contact</Nav.Link>
+                <Nav.Link href="/about" className='mx-4'> Features</Nav.Link>
+                {/* <Nav.Link href="/contact" className='mx-4'>Contact</Nav.Link> */}
               </Nav>
             </Navbar.Collapse>
             <Navbar.Collapse className="justify-content-end">
               <div className="end-nav-li">
+                <Link to='/createblog'><button className='create-blog-btn'>Create Blog</button></Link>
                 <Link to="/logins">
                 <PersonIcon className='icon-nav text-dark' />
                 </Link>
-                
                 <NotificationsIcon className='icon-nav' />
               </div>
             </Navbar.Collapse>
