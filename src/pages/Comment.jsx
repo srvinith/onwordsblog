@@ -35,6 +35,7 @@ function CommentList() {
         <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} />
       ))}
     </div>
+    
   );
 }
 
