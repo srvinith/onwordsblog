@@ -23,7 +23,7 @@ function Reg() {
     
     try {
         console.log("sf")
-        const response = await axios.post('http://192.168.1.12:8000/register_user', formData,{
+        const response = await axios.post('http://192.168.1.10:8000/register_user', formData,{
             headers:{
                 'Content-Type':'application/json'
             },
