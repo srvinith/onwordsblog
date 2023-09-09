@@ -16,10 +16,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { SendRounded } from '@mui/icons-material';
 
-
-
-
-
 // images //
 
 
