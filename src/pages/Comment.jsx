@@ -44,7 +44,6 @@ function Comment({ text, likes, onLike, onReply,onDelete }) {
   );
 }
 
-<<<<<<< HEAD
 function CommentList() {
   const [comments, setComments] = useState([
     { id: 1, text: 'This is comment 1' },
@@ -69,6 +68,3 @@ function CommentList() {
 }
 
 export default CommentList;
-=======
-export default Comment;
->>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
