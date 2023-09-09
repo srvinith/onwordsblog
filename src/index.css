@@ -287,5 +287,16 @@ button{
   outline: none;
   background-color: transparent;
 }
+.verify{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.verify button{
+  float: left;
+}
+.otpinp{
+  width: 90% !important;
+}
 
 /* ===========login btn======= */
