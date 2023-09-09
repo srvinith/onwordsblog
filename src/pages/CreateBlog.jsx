@@ -20,14 +20,13 @@ const CreateBlog = () => {
     };
     const [value, setValue] = useState("");
     const [title, setTitle] = useState("")
-    console.log(value);
-
-
+    console.log(value)
+   
     return (
         <>
             <div className="container">
                 <form action="/">
-                    
+
                     <div className="editor-container">
                         <div className="top-editor-btn">
                             <button className="btn btn-primary">Darft & Save</button>
@@ -38,11 +37,12 @@ const CreateBlog = () => {
                         />
                         <p><input type="hidden" value={title} /></p>
                         <ReactQuill modules={modules} theme="snow" onChange={setValue} placeholder="The content starts here..." className="text-editor" />
+<<<<<<< HEAD
                     </div> 
+=======
+                    </div>
+>>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
                 </form>
-
-            </div>
-            <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <form action="">
@@ -54,7 +54,9 @@ const CreateBlog = () => {
                         </select>
                     </div>
                 </div>
+
             </div>
+           
 
         </>
 

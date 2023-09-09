@@ -1,21 +1,50 @@
 import React, { useState } from 'react';
 
-function Comment({ comment, onDelete }) {
-  const handleDeleteComment = () => {
-    // Assuming comment.id is the unique identifier for the comment
-    // Make an HTTP request to delete the comment on the server
-    // Once the comment is deleted on the server, update the UI
-    onDelete(comment.id);
+function Comment({ text, likes, onLike, onReply,onDelete }) {
+  const [replyText, setReplyText] = useState('');
+  const [showReplyInput, setShowReplyInput] = useState(false);
+
+  const handleLikeClick = () => {
+    onLike();
   };
+
+  const handleReplyClick = () => {
+    setShowReplyInput(true);
+  };
+
+  const handleReplySubmit = () => {
+    if (replyText.trim() !== '') {
+      onReply(replyText);
+      setReplyText('');
+      setShowReplyInput(false);
+    }
+  };
+  const handleDelete=()=>{
+    onDelete()
+  }
 
   return (
     <div className="comment">
-      <p>{comment.text}</p>
-      <button onClick={handleDeleteComment}>Delete</button>
+      <p>{text}</p>
+      <button onClick={handleLikeClick}>Like ({likes})</button>
+      <button onClick={handleReplyClick}>Reply</button>
+      <button onClick={handleDelete}>Delete</button>
+      {showReplyInput && (
+        <div>
+          <input
+            type="text"
+            placeholder="Reply..."
+            value={replyText}
+            onChange={(e) => setReplyText(e.target.value)}
+          />
+          <button onClick={handleReplySubmit}>Submit Reply</button>
+        </div>
+      )}
     </div>
   );
 }
 
+<<<<<<< HEAD
 function CommentList() {
   const [comments, setComments] = useState([
     { id: 1, text: 'This is comment 1' },
@@ -40,3 +69,6 @@ function CommentList() {
 }
 
 export default CommentList;
+=======
+export default Comment;
+>>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
