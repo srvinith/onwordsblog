@@ -4,6 +4,8 @@ import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
 import PersonIcon from '@mui/icons-material/Person';
 import { Close } from '@mui/icons-material';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios'
 
 
@@ -43,7 +45,7 @@ const Register = () => {
                 // Registration was successful, you can handle the response data here
                 const responseData = response.data;
                 console.log('Registration successful:', responseData);
-                window.location.href='/logins'
+                window.location.href = '/logins'
 
                 // Optionally, you can redirect the user to the login page or perform other actions
             } else {
@@ -61,13 +63,16 @@ const Register = () => {
         e.preventDefault();
         registerUser();
     };
-
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility=()=>{
+        setShowPassword(!showPassword)
+    }
 
     return (
         <>
             <div className="login-bg">
                 <div className="login-box ">
-               
+
                     <form onSubmit={handleSubmit}>
                         <div className="signin">
                             <Link to='/logins'><Close className='closeBtn' /></Link>
@@ -96,13 +101,15 @@ const Register = () => {
                             <div className="form-group">
                                 <LockIcon />
                                 <input
-                                    type="password"
+                                    type={showPassword ? 'text' : 'password'}
                                     name="password"
                                     placeholder='Password'
                                     value={formData.password}
                                     onChange={handleInputChange}
                                 />
-
+                                <button className='eyebtn' onClick={togglePasswordVisibility}>
+                                    {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+                                </button>
                             </div>
                             <Link to="/forgot" >Forgot Password</Link> <br />
                             <Link to="/logins" >Login</Link> <br />
