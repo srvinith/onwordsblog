@@ -37,7 +37,11 @@ const CreateBlog = () => {
                         />
                         <p><input type="hidden" value={title} /></p>
                         <ReactQuill modules={modules} theme="snow" onChange={setValue} placeholder="The content starts here..." className="text-editor" />
+<<<<<<< HEAD
+                    </div> 
+=======
                     </div>
+>>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
                 </form>
                 <div className="row">
                     <div className="col-md-12">

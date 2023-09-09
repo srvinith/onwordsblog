@@ -44,4 +44,31 @@ function Comment({ text, likes, onLike, onReply,onDelete }) {
   );
 }
 
+<<<<<<< HEAD
+function CommentList() {
+  const [comments, setComments] = useState([
+    { id: 1, text: 'This is comment 1' },
+    { id: 2, text: 'This is comment 2' },
+    // ...
+  ]);
+
+  const handleDeleteComment = (commentId) => {
+    // Filter out the deleted comment from the comments array
+    const updatedComments = comments.filter((comment) => comment.id !== commentId);
+    setComments(updatedComments);
+  };
+
+  return (
+    <div className="comment-list">
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} />
+      ))}
+    </div>
+    
+  );
+}
+
+export default CommentList;
+=======
 export default Comment;
+>>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
