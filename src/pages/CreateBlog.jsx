@@ -37,23 +37,21 @@ const CreateBlog = () => {
                         />
                         <p><input type="hidden" value={title} /></p>
                         <ReactQuill modules={modules} theme="snow" onChange={setValue} placeholder="The content starts here..." className="text-editor" />
-<<<<<<< HEAD
                     </div> 
-=======
-                    </div>
->>>>>>> 512e363b95f17aac28148c3f48d624ce6ab332fc
                 </form>
-                <div className="row">
-                    <div className="col-md-12">
-                        <form action="">
+               
+                    <div className="bottom-create-inp">
+                        <form action="" className="tags-inp">
                             <label for="tags">Tags (comma separated):</label>
                             <input type="text" id="tags" name="tags" />
                         </form>
                         <select name="category" id="category">
                             <option value="" disabled selected>Select a category or enter a new one</option>
+                            <option value="food" >Food</option>
+                            <option value="food" >Data Science</option>
                         </select>
                     </div>
-                </div>
+                
 
             </div>
            

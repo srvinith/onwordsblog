@@ -63,13 +63,21 @@ button{
   font-style: normal;
   font-weight: 600;
 }
+.active{
+  color: #FF6F66;
+}
 
 .create-blog-btn {
   border-radius: 10px;
   border: 2px solid #FF6F66;
   padding: 7px;
-  background: none;
+  background: transparent;
   outline: none;
+}
+.create-blog-btn:hover{
+  color: #fff;
+  background-color: #FF6F66;
+  border: none;
 }
 
 .form-group {
