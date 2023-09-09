@@ -124,7 +124,7 @@ const Blog = () => {
 
                         <ul>
                           {comments.map((comment, index) => (
-                            <li key={index}>{comment}</li>
+                            <li key={index}>{comment} <span><button></button></span></li>
                           ))}
                         </ul>
                       </div>
