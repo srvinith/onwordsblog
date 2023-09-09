@@ -29,7 +29,7 @@ const Register = () => {
 
         try {
             console.log("sf")
-            const response = await axios.post('http://192.168.1.8:8005/register_user', formData, {
+            const response = await axios.post('http://192.168.1.12:8000/register_user', formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -78,6 +78,7 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="name"
+                                    placeholder='Name'
                                     value={formData.name}
                                     onChange={handleInputChange}
                                 />
@@ -87,6 +88,7 @@ const Register = () => {
                                 <input
                                     type="email"
                                     name="email"
+                                    placeholder='Email'
                                     value={formData.email}
                                     onChange={handleInputChange}
                                 />
@@ -96,6 +98,7 @@ const Register = () => {
                                 <input
                                     type="password"
                                     name="password"
+                                    placeholder='Password'
                                     value={formData.password}
                                     onChange={handleInputChange}
                                 />

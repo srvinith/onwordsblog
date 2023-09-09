@@ -32,7 +32,7 @@ const Login = () => {
     const handleLogin = async () => {
         console.log(handleLogin)
         try {
-            const response = await axios.post('http://192.168.1.8:8005/verify_login', {
+            const response = await axios.post('http://192.168.1.12:8000/verify_login', {
                 email,
                 password,
             });
@@ -73,8 +73,6 @@ const Login = () => {
         <>
             <div className="login-bg">
                 <div className="login-box" id='login'>
-
-
                     <div className="signin">
                         <Link to='/'><Close className='closeBtn' /></Link>
                         <p>{message}</p>
@@ -93,9 +91,10 @@ const Login = () => {
                             <input
                                 type={showPassword ? 'text' : 'password'}
                                 value={password}
+                                placeholder='Password'
                                 onChange={handlePasswordChange}
                             />
-                            <button onClick={togglePasswordVisibility}>
+                            <button className='eyebtn' onClick={togglePasswordVisibility}>
                                 {showPassword ?<VisibilityOffIcon /> : <RemoveRedEyeIcon />}
                             </button>
                             {/* <input

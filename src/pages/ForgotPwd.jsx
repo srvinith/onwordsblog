@@ -16,7 +16,7 @@ const ForgotPwd = () => {
   
   const sendOtp = async () => {
     try {
-      const response = await axios.post('http://192.168.1.8:8005/send_otp', { email });
+      const response = await axios.post('http://192.168.1.12:8000/send_otp', { email });
       setMessage(response.data.message);
       if (response.data.message === 'OTP sent successfully') {
         setMessage('OTP sent successfully');
@@ -43,7 +43,7 @@ const ForgotPwd = () => {
 
   const verifyOtp = async () => {
     try {
-      const response = await axios.post('http://192.168.1.8:8005/verify_otp', { email, otp });
+      const response = await axios.post('http://192.168.1.12:8000/verify_otp', { email, otp });
       setMessage(response.data.message);
     } catch (error) {
       setMessage('Invalid OTP. Please try again.');
@@ -52,7 +52,7 @@ const ForgotPwd = () => {
 
   const resetPassword = async () => {
     try {
-      const response = await axios.post('http://192.168.1.8:8005/reset_password', { email, new_password: newPassword });
+      const response = await axios.post('http://192.168.1.12:8000/reset_password', { email, new_password: newPassword });
       setMessage(response.data.message);
     } catch (error) {
       setMessage('Password reset failed. Please try again.');
