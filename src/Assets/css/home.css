@@ -417,7 +417,6 @@
 
 
 .comment-sec {
-    border: 1px solid black;
     width: 100%;
     height: 100%;
 }
@@ -430,3 +429,66 @@
     height: 400px;
 }
 /* blog end */
+
+.blog-store-page{
+    width: 80% !important;
+    max-width: 80%;
+    margin: 20px auto;
+}
+.comment-inp{
+    width: 95%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #ccc;
+    margin: 6px 5px;
+    display: flex;
+    border-radius: 3px;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-inp input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.comment-view{
+    width: 95%;
+    margin: auto;
+    height: 340px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar.comment-view{
+    display: none;
+}
+.comment-list{
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 3px;
+    width: 90%;
+    margin: 5px 0px;
+    flex-wrap: wrap;
+    display: block;
+    position: relative;
+    height: auto;
+}
+.react-icon{
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    font-size: 10px;
+    width: 40%;
+    display: flex;
+}
+.like,.unlike{
+    margin: 0px 5px;
+    display: flex;
+    align-items: center;
+}
+.like span,.unlike span{
+    font-size: 16px;
+    padding: 0px 4px;
+}
+
