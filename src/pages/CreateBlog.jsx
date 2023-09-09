@@ -28,7 +28,7 @@ const CreateBlog = () => {
             <div className="container">
                 <form action="/">
                     
-                    {/* <div className="editor-container">
+                    <div className="editor-container">
                         <div className="top-editor-btn">
                             <button className="btn btn-primary">Darft & Save</button>
                             <Link to="/blogstore"> <button className="btn btn-primary">Publish</button></Link>
@@ -38,7 +38,7 @@ const CreateBlog = () => {
                         />
                         <p><input type="hidden" value={title} /></p>
                         <ReactQuill modules={modules} theme="snow" onChange={setValue} placeholder="The content starts here..." className="text-editor" />
-                    </div> */}
+                    </div>
                 </form>
 
             </div>
@@ -51,7 +51,6 @@ const CreateBlog = () => {
                         </form>
                         <select name="category" id="category">
                             <option value="" disabled selected>Select a category or enter a new one</option>
-                            
                         </select>
                     </div>
                 </div>
