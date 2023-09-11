@@ -44,4 +44,27 @@ function Comment({ text, likes, onLike, onReply,onDelete }) {
   );
 }
 
-export default Comment
+function CommentList() {
+  const [comments, setComments] = useState([
+    { id: 1, text: 'This is comment 1' },
+    { id: 2, text: 'This is comment 2' },
+    // ...
+  ]);
+
+  const handleDeleteComment = (commentId) => {
+    // Filter out the deleted comment from the comments array
+    const updatedComments = comments.filter((comment) => comment.id !== commentId);
+    setComments(updatedComments);
+  };
+
+  return (
+    <div className="comment-list">
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} />
+      ))}
+    </div>
+    
+  );
+}
+
+export default CommentList;

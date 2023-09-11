@@ -30,7 +30,7 @@ const Hero = () => {
       <section >
 
         <div className="container">
-          <div className="row">
+          <div className="row ">
             <h3>Categories</h3>
             <div className="col-md-3">
               <div className='lifestyle'>
@@ -83,11 +83,11 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className='ca'>
         <div className="scrolling-animation">
           <div class="position-relative marquee-container d-none d-sm-block ">
             <div class="marquee d-flex justify-content-around">
-              <span>Life Style</span>
+             <div className="d-flex align-items-center"> <span><span className='fw-bold'>*</span>Life Style</span></div>
               <span>Travel</span>
               <span>Food</span>
               <span>Internet of things</span>
@@ -99,19 +99,7 @@ const Hero = () => {
               <span>Internet of things</span>
               <span>Yoga Life</span>
             </div>
-            <div class="marquee d-flex justify-content-around">
-              <span>Life Style</span>
-              <span>Travel</span>
-              <span>Food</span>
-              <span>Internet of things</span>
-              <span>Yoga Life</span>
-              <span>VAn LIfe</span>
-              <span>Life Style</span>
-              <span>Travel</span>
-              <span>Food</span>
-              <span>Internet of things</span>
-              <span>Yoga Life</span>
-            </div>
+          
           </div>
         </div>
       </section>
