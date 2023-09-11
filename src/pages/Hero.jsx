@@ -27,7 +27,7 @@ const Hero = () => {
       </div>
 
       {/* ===================== */}
-      <section >
+      <section className='categories'>
 
         <div className="container">
           <div className="row ">
@@ -59,35 +59,39 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className='latest-life-post'>
         <div className="container">
+          <h3>Latest Posts</h3>
           <div className="row">
-            <h3>Latest Posts</h3>
             <div className="col-md-4">
-              <div>
+              <div className='vanlife'>
                 <img src={VanLife} alt="VAn life" />
                 <h5>Why Does Van Life is <br></br>Peaceful While Exploring ?</h5>
                 <p>John Wicker . July 3-2023</p>
               </div>
             </div>
             <div className="col-md-4">
-              <img src={TeaEstate} alt="VAn life" />
-              <h5>Why Does Van Life is <br></br>Peaceful While Exploring ?</h5>
-              <p>John Wicker . July 3-2023</p>
+              <div className="vanlife">
+                <img src={TeaEstate} alt="VAn life" />
+                <h5>Why Does Van Life is <br></br>Peaceful While Exploring ?</h5>
+                <p>John Wicker . July 3-2023</p>
+              </div>
             </div>
             <div className="col-md-4">
-              <img src={Flower} alt="VAn life" />
-              <h5>Why Does Van Life is <br></br>Peaceful While Exploring ?</h5>
-              <p>John Wicker . July 3-2023</p>
+              <div className="vanlife">
+                <img src={Flower} alt="VAn life" />
+                <h5>Why Does Van Life is <br></br>Peaceful While Exploring ?</h5>
+                <p>John Wicker . July 3-2023</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className='ca'>
+      <section>
         <div className="scrolling-animation">
           <div class="position-relative marquee-container d-none d-sm-block ">
             <div class="marquee d-flex justify-content-around">
-             <div className="d-flex align-items-center"> <span><span className='fw-bold'>*</span>Life Style</span></div>
+              <div className="d-flex align-items-center"> <span><span className='fw-bold'>*</span>Life Style</span></div>
               <span>Travel</span>
               <span>Food</span>
               <span>Internet of things</span>
@@ -99,7 +103,7 @@ const Hero = () => {
               <span>Internet of things</span>
               <span>Yoga Life</span>
             </div>
-          
+
           </div>
         </div>
       </section>
