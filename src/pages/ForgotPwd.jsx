@@ -8,6 +8,7 @@ import axios from 'axios'
 import OtpInput from 'react-otp-input';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPwd = () => {
 
@@ -16,10 +17,11 @@ const ForgotPwd = () => {
   const [newPassword, setNewPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const sendOtp = async () => {
     try {
-      const response = await axios.post('http://192.168.1.10:8000/send_otp', { email });
+      const response = await axios.post('http://192.168.1.8:8000/send_otp', { email });
       setMessage(response.data.message);
       if (response.data.message === 'OTP sent successfully') {
         setMessage('OTP sent successfully');
@@ -46,7 +48,7 @@ const ForgotPwd = () => {
 
   const verifyOtp = async () => {
     try {
-      const response = await axios.post('http://192.168.1.10:8000/verify_otp', { email, otp });
+      const response = await axios.post('http://192.168.1.8:8000/verify_otp', { email, otp });
       setMessage(response.data.message);
     } catch (error) {
       setMessage('Invalid OTP. Please try again.');
@@ -55,8 +57,9 @@ const ForgotPwd = () => {
 
   const resetPassword = async () => {
     try {
-      const response = await axios.post('http://192.168.1.10:8000/reset_password', { email, new_password: newPassword });
+      const response = await axios.post('http://192.168.1.8:8000/reset_password', { email, new_password: newPassword });
       setMessage(response.data.message);
+      navigate('/logins')
     } catch (error) {
       setMessage('Password reset failed. Please try again.');
     }
