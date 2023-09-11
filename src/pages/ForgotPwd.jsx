@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ForgotPwd = () => {
-
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [newPassword, setNewPassword] = useState('');

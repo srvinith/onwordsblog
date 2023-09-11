@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
-import { Close } from '@mui/icons-material';
+import { Close} from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 
 
+
 const Login = () => {
+
+    
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -45,6 +48,8 @@ const Login = () => {
                 setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
                 window.location.href = '/'
 
+                // Redirect to the desired page (e.g., home page)
+                window.location.href = '/';
 
             }
 
