@@ -8,6 +8,15 @@ import VanLife from '../Assets/images/van-life.png'
 import TeaEstate from '../Assets/images/tea-estate.png'
 import Flower from '../Assets/images/flower.png'
 import MobileRead from '../Assets/images/mobile-read.png'
+import CameraLife from '../Assets/images/camera-life.png'
+import TraditionalFood from '../Assets/images/traditional-food.png'
+import EaduRoom from '../Assets/images/eadu-room.png'
+import HealthyTrad from '../Assets/images/healthy-life-trad.png'
+import MusicTrad from '../Assets/images/music-trad.png'
+import LearnCss from '../Assets/images/learn-css.png'
+// import Specs from '../Assets/images/specs.svg'
+import Business from '../Assets/images/business.png'
+// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const Hero = () => {
   return (
     <>
@@ -90,32 +99,201 @@ const Hero = () => {
       <section>
         <div className="scrolling-animation">
           <div class="position-relative marquee-container d-none d-sm-block ">
-            <div class="marquee d-flex justify-content-around">
-              <div className="d-flex align-items-center"> <span><span className='fw-bold'>*</span>Life Style</span></div>
-              <span>Travel</span>
-              <span>Food</span>
-              <span>Internet of things</span>
-              <span>Yoga Life</span>
-              <span>VAn LIfe</span>
-              <span>Life Style</span>
-              <span>Travel</span>
-              <span>Food</span>
-              <span>Internet of things</span>
-              <span>Yoga Life</span>
+            <div class="marquee d-flex justify-content-around letter-animat">
+              <div className="d-flex align-items-center "> </div>
+              <span><span className='fw-bold'>*</span>Life Style</span>
+              <span><span className='fw-bold'>*</span>Food</span>
+              <span><span className='fw-bold'>*</span>Travel</span>
+              <span><span className='fw-bold'>*</span>Travel</span>
+              <span><span className='fw-bold'>*</span>Food</span>
+              <span><span className='fw-bold'>*</span>Internet of things</span>
+              <span><span className='fw-bold'>*</span>Yoga LIfe</span>
+              <span><span className='fw-bold'>*</span>VAn LIfe</span>
+              <span><span className='fw-bold'>*</span>TRavel</span>
+              <span><span className='fw-bold'>*</span>Food</span>
+              <span><span className='fw-bold'>*</span>Life Style</span>
+              <span><span className='fw-bold'>*</span>VAn LIfe</span>
+              <span><span className='fw-bold'>*</span>Life Style</span>
+              <span><span className='fw-bold'>*</span>Life Style</span>
+
             </div>
 
           </div>
         </div>
       </section>
-      <section>
+      <section className='recent-sec'>
         <div className="container">
+          <h3>Recent Posts</h3>
           <div className="row">
-            <div className="com-md-6">
-              <div>
+            <div className="col-md-6">
+              <div className='recent-post'>
                 <img src={MobileRead} alt="mobile read" />
+                <div className='post-para'>
+                  <p>Dulquer Salman . July 3-2023</p>
+                </div>
+                <h5>Why Does Van Life is<br></br> Peaceful While Exploring ?</h5>
+                <p>Read Article</p>
               </div>
             </div>
-            <div className="com-md-6"></div>
+            <div className="col-md-6">
+              <div className='recent-post'>
+                <img src={CameraLife} alt="camer life" />
+                <div className='post-para'>
+                  <p>Dulquer Salman . July 3-2023</p>
+                </div>
+                <h5>Why Does Van Life is<br></br> Peaceful While Exploring ?</h5>
+                <p>Read Article</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='trending-post'>
+        <div className="container">
+          <h3>Trending Posts</h3>
+          <div className="row">
+            <div className="col-md-6">
+              <div className='traditional-food'>
+                <img src={TraditionalFood} alt="Traditioal Food" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className='red-article'>
+                <h3>South India such a great<br></br> destination to travel is its<br></br> rich and varied cuisine ?</h3>
+                <p>While South Indians are not afraid to experiment with their food, it is their old traditions and recipes that make South Indian cuisine such a unique experience</p>
+              </div>
+
+
+
+              {/* < ArrowRightAltIcon /> */}
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='writter-choice-blog'>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <h3 className='writers'>Writer’s Choice</h3>
+
+              <div className='eaducation'>
+                <p className='eaducat'>Education</p>
+                <h3>Book lovers with extensive collections dream of
+                  having a dedicated home library where ?</h3>
+                <p>While South Indians are not afraid to experiment
+                  with their food, it is their old traditions and recipes </p>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <img src={EaduRoom} alt="eaducation room" />
+              </div>
+            </div>
+            <div className="col-md-6">
+
+
+              <div className='eaducation'>
+                <p className='eaducat'>Healthy Life </p>
+                <h3>Living a healthier life might seem like a tall order ?</h3>
+                <p>the nutrition, the exercise, the inner happiness! But having some friendly advice
+                  at your disposal, whenever and wherever you need it, </p>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <img src={HealthyTrad} alt="healthy" />
+              </div>
+            </div>
+            <div className="col-md-6">
+
+
+              <div className='eaducation'>
+                <p className='eaducat'>Music</p>
+                <h3>South India, they all come together in ‘ Panchavadyam ?</h3>
+                <p>an ensemble style originating in the state of Kerala on South India’s Malabar
+                  Coast. Like many melams, Panchavadayam’s performance </p>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <img src={MusicTrad} alt="music " />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='latest-podcasts'>
+        <div className="container">
+          <div className="row">
+            <h3>Latest Podcasts</h3>
+            <div className="col-md-4">
+              <div className='latest-pod'>
+                <img src={MusicTrad} alt="" />
+                <h3>Why Does Van Life is Peaceful While Exploring ?</h3>
+                <p>John Wicker . July 3-2023</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='latest-pod'>
+                <img src={MusicTrad} alt="" />
+                <h3>Why Does Van Life is Peaceful While Exploring ?</h3>
+                <p>John Wicker . July 3-2023</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='latest-pod'>
+                <img src={MusicTrad} alt="" />
+                <h3>Why Does Van Life is Peaceful While Exploring ?</h3>
+                <p>John Wicker . July 3-2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='more-learn-sec'>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={LearnCss} alt="learn css" />
+                <h6>How to learn css ?</h6>
+                {/* <p><img src={Specs} alt="" /><span>12 min</span></p> */}
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={Business} alt="learn css" />
+                <h6>How to create a successful business ?</h6>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={LearnCss} alt="learn css" />
+                <h6>10 Tips to be productive?</h6>
+              </div>
+            </div>
+          </div>
+          <div className=" row more-sec">
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={LearnCss} alt="learn css" />
+                <h6>How to learn css ?</h6>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={LearnCss} alt="learn css" />
+                <h6>How to create a successful business ?</h6>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='learn'>
+                <img src={LearnCss} alt="learn css" />
+                <h6>10 Tips to be productive?</h6>
+              </div>
+            </div>
           </div>
         </div>
       </section>
