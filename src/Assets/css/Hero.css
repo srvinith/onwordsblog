@@ -49,13 +49,17 @@
 
 }
 
+.categories {
+    margin-top: 10px 0 10px 0;
+}
+
 .lifestyle {
     width: 100%;
     height: 100%;
     position: relative;
     display: flex;
     justify-content: space-between;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .lifestyle p {
@@ -68,6 +72,33 @@
 
 .categories {
     padding: 4px;
+}
+
+.categories {
+    margin: 60px 0 60px 0;
+}
+
+.categories h3 {
+    font-family: jost;
+}
+
+.latest-life-post {
+    margin: 60px 0 60px 0;
+}
+
+.latest-life-post h3 {
+    font-family: jost;
+}
+
+.vanlife h5 {
+    font-family: Space sans-serif;
+    margin-top: 10px;
+}
+
+.vanlife p {
+    font-family: Space sans-serif;
+    font-size: 15px;
+
 }
 
 .marquee-container {

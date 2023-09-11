@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-body{
+@font-face {
+  font-family: space;
+  src: url(./Assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 .login-box {
   background-color: #fff;
   width: 100%;
@@ -42,7 +48,7 @@ body{
   width: 100px;
 }
 
-button{
+button {
   border: none;
   outline: none;
   background: transparent;
@@ -58,12 +64,13 @@ button{
   left: 0;
   z-index: 10;
   color: #000;
-  font-family: Space Grotesk;
+  font-family: space, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
 }
-.active{
+
+.active {
   color: #FF6F66;
 }
 
@@ -74,7 +81,8 @@ button{
   background: transparent;
   outline: none;
 }
-.create-blog-btn:hover{
+
+.create-blog-btn:hover {
   color: #fff;
   background-color: #FF6F66;
   border: none;
@@ -295,15 +303,18 @@ button{
   outline: none;
   background-color: transparent;
 }
-.verify{
+
+.verify {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.verify button{
+
+.verify button {
   float: left;
 }
-.otpinp{
+
+.otpinp {
   width: 90% !important;
 }
 
