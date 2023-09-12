@@ -88,7 +88,6 @@ const Login = () => {
                 {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
               </button>
             </div>
-
             <Link to="/forgot">Forgot Password</Link> <br />
             <Link to="/register">Register</Link> <br />
 
