@@ -90,6 +90,13 @@
     font-family: jost;
 }
 
+.vanlife {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .vanlife h5 {
     font-family: Space sans-serif;
     margin-top: 10px;
@@ -290,10 +297,13 @@ h5 {
 
 .learn {
     display: flex;
+    margin-top: 40px;
 }
 
 .learn h6 {
     margin-left: 40px;
+
+
 }
 
 .more-sec {
@@ -301,7 +311,7 @@ h5 {
 }
 
 .more-learn-sec {
-    margin: 40px 0 40px 0;
+    margin: 60px 0 60px 0;
 }
 
 .make {
@@ -315,7 +325,7 @@ h5 {
 
 .discover {
     text-align: center;
-    font-familoy: Jost;
+    font-family: Jost;
 }
 
 .more-topics {
@@ -325,21 +335,119 @@ h5 {
 
 .technology {
 
-    width: 80%;
-  
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-     
-    justify-content: space-between; 
+    justify-content: space-between;
+    grid-template-columns: auto;
+    column-gap: 35px;
+    margin-top: 40px;
+    font-family: Jost;
 }
 
 .technology p {
     border: 1px solid #F4F4F4;
     background-color: #F4F4F4;
-    border-radius: 10px;
-    width: fit-content;
+    border-radius: 15px;
+    width: 25%;
     height: 40px;
     text-align: center;
     padding: 5px;
+
+}
+
+.technlogies-sec {
+    margin: 40px 0 40px 0;
+}
+
+.see-more {
+    color: red;
+    font-size: 15px;
+    font-family: jost;
+}
+
+.follow {
+    font-family: jost;
+}
+
+.follow-blog {
+    border: 3px solid rgba(240, 240, 240, 0.45);
+    background-color: white;
+    backdrop-filter: blur(2px);
+    box-shadow: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+.follow-blog {
+    margin-top: 30px;
+}
+
+.john {
+    font-family: Space, serif;
+    color: #000;
+
+}
+
+.john span {
+    color: red;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.psychology {
+    font-family: jost;
+    font-size: 12px;
+}
+
+.follow-sec {
+    margin: 40px 0 40px 0;
+}
+
+.recently {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recently h2 {
+    font-family: jost;
+}
+
+.recently p {
+    font-family: space, serif;
+}
+
+.learn h6 {
+    font-family: space, serif;
+    font-size: 12px;
+}
+
+.circle-sec-first {
+    background-color: #E5EDED;
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    border-radius: 100%;
+}
+
+.delivered-mail {
+    background-color: #E5EDED;
+    /* border-radius: 100%; */
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    /* bottom: -70px; */
+}
+
+.mail-sec {
+    width: 100%;
+    height: 60vh;
+    background-color: #E5EDED;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

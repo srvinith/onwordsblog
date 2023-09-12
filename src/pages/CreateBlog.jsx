@@ -1,11 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Cookies from 'js-cookie';
-
-
 const CreateBlog = () => {
 
     const modules = {
@@ -33,11 +30,11 @@ const CreateBlog = () => {
     const [newCategory, setNewCategory] = useState('');
     const [message, setMessage] = useState('');
     const [userId, setUserId] = useState('');
-    useEffect(() => {
-        // Retrieve the user ID from cookies when the component mounts
-        const user_id = Cookies.get('user_id');
-        setUserId(user_id);
-    }, []);
+    // useEffect(() => {
+      
+    //     const user_id = Cookies.get('user_id');
+    //     setUserId(user_id);
+    // }, []);
 
     const handleCreateBlog = async () => {
         try {
@@ -46,7 +43,7 @@ const CreateBlog = () => {
                 blog_text: blogText,
                 tags,
                 category: newCategory || category,
-                
+
                 user_id: userId, // Set the user ID accordingly
             };
 
@@ -82,11 +79,11 @@ const CreateBlog = () => {
                         <input type="text" required placeholder="Title" className="title-inp"
                             onChange={setTitle}
                         />
-                        <input type="text"  />
+                        <input type="text" />
                         <ReactQuill modules={modules} theme="snow" placeholder="The content starts here..." onChange={setBlogText} className="text-editor" />
                     </div>
                 </form>
-               
+
                 <div className="bottom-create-inp">
                     <form action="" className="tags-inp">
                         <label for="tags">Tags (comma separated):</label>
