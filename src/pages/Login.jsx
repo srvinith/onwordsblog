@@ -8,14 +8,10 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Cookies from 'js-cookie';
 
-
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  // const [userEmail, setUserEmail] = useState('');
-  // const [userId, setUserId] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
 
