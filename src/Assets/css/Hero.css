@@ -185,9 +185,7 @@ h5 {
     height: 100vh;
 }
 
-.recent-sec {
-    /* position: relative; */
-}
+
 
 .traditional-food img {
     width: 100%;
@@ -315,7 +313,7 @@ h5 {
 
 .discover {
     text-align: center;
-    font-familoy: Jost;
+    font-family: Jost;
 }
 
 .more-topics {
