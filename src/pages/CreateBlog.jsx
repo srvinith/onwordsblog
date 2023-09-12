@@ -1,45 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie';
 import axios from 'axios';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const CreateBlog = () => {
-  const [title, setTitle] = useState('');
-  const [blogText, setBlogText] = useState('');
-  const [tags, setTags] = useState('');
-  const [category, setCategory] = useState('');
-  const [newCategory, setNewCategory] = useState('');
-  const [message, setMessage] = useState('');
 
-  const [categories, setCategories] = useState([]);
-  const [user_id, setUser_id] = useState(null);
-
-  // Use the 'useCookies' hook to access cookies
-  const [cookies] = useCookies(['user_id']);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get('http://192.168.1.8:8000/get_all_blogs');
-
-        if (response.status === 200) {
-           const blogData = response.data;
-           setCategories(blogData.categories);
-        } else {
-          alert('An error occurred while fetching categories.');
-        }
-      } catch (error) {
-        alert('An error occurred while fetching categories.');
-      }
-    };
-
-    fetchCategories();
-
-    // Get the user_id from cookies and set it in the state
-    const user_idFromCookies = cookies.user_id;
-    setUser_id(user_idFromCookies);
-  }, [cookies]); // The 'cookies' dependency ensures the effect runs when cookies change
+    const CreateBlog = () => {
+        const [title, setTitle] = useState('');
+        const [blogText, setBlogText] = useState('');
+        const [tags, setTags] = useState('');
+        const [category, setCategory] = useState('');
+        const [newCategory, setNewCategory] = useState('');
+        const [message, setMessage] = useState('');
+      
+        const [categories, setCategories] = useState([]);
+        const [user_id, setUser_id] = useState(null);
+      
+        useEffect(() => {
+          const fetchCategories = async () => {
+            try {
+              const response = await axios.get('http://192.168.1.8:8000/get_all_blogs');
+      
+              if (response.status === 200) {
+                const blogData = response.data;
+                setCategories(blogData.all_blogs.categories); // Access categories from all_blogs
+                console.log("categories", blogData.all_blogs.categories);
+              } else {
+                alert('An error occurred while fetching categories.');
+              }
+            } catch (error) {
+              alert('An error occurred while fetching category.');
+            }
+          };
+      
+          fetchCategories();
+      
+          // Get the user_id from cookies and set it in the state
+          const user_idFromCookies = Cookies.get('user_id');
+          setUser_id(user_idFromCookies);
+        }, []);
 
   const modules = {
     toolbar: [

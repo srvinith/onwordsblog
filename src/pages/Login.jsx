@@ -6,10 +6,7 @@ import { Close} from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-<<<<<<< HEAD
-=======
 import Cookies from 'js-cookie';
->>>>>>> b8815b15805b4ca2b688ed1b429edecab516ed73
 
 
 
@@ -17,16 +14,9 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-<<<<<<< HEAD
 
   const [showPassword, setShowPassword] = useState(false);
   
-=======
-  // const [userEmail, setUserEmail] = useState('');
-  // const [userId, setUserId] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-
->>>>>>> b8815b15805b4ca2b688ed1b429edecab516ed73
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -45,16 +35,11 @@ const Login = () => {
 
       if (response.status === 200) {
         const { user_id, user_email } = response.data;
-<<<<<<< HEAD
-      
-        setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-=======
        
         setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
 
         Cookies.set('user_id', user_id);
         Cookies.set('user_email', user_email);
->>>>>>> b8815b15805b4ca2b688ed1b429edecab516ed73
        
         window.location.href = '/';
       }
@@ -109,11 +94,7 @@ const Login = () => {
 
             <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
           </div>
-<<<<<<< HEAD
          
-=======
-        
->>>>>>> b8815b15805b4ca2b688ed1b429edecab516ed73
         </div>
       </div>
     </>
