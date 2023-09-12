@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
-import { Close } from '@mui/icons-material';
+import { Close} from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { CookiesProvider, useCookies } from 'react-cookie'
+import Cookies from 'js-cookie';
 
 
 
@@ -27,8 +27,6 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const [cookies, setCookie] = useState(["user"])
-
   const handleLogin = async () => {
     try {
       const response = await axios.post('http://192.168.1.8:8000/verify_login', {
@@ -38,11 +36,12 @@ const Login = () => {
 
       if (response.status === 200) {
         const { user_id, user_email } = response.data;
-      
-
+       
         setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-        setCookie("user", user, { path: "/" })
 
+        Cookies.set('user_id', user_id);
+        Cookies.set('user_email', user_email);
+       
         window.location.href = '/';
       }
     } catch (error) {
@@ -64,47 +63,40 @@ const Login = () => {
   return (
     <>
       <div className="login-bg">
-        <CookiesProvider>
-          {cookies.user ?(<WelcomePage user={cookies.user}/>):(
-            
-            <div className="login-box" id='login'>
-            <div className="signin">
-              <Link to='/'><Close className='closeBtn' /></Link>
-              <p>{message}</p>
-              <h2>Login</h2>
-              <div className="form-group">
-                <EmailIcon />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <LockIcon />
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  placeholder='Password'
-                  onChange={handlePasswordChange}
-                />
-                <button className='eyebtn' onClick={togglePasswordVisibility}>
-                  {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
-                </button>
-              </div>
-
-              <Link to="/forgot">Forgot Password</Link> <br />
-              <Link to="/register">Register</Link> <br />
-
-              <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
+        <div className="login-box" id='login'>
+          <div className="signin">
+            <Link to='/'><Close className='closeBtn' /></Link>
+            <p>{message}</p>
+            <h2>Login</h2>
+            <div className="form-group">
+              <EmailIcon />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <LockIcon />
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                placeholder='Password'
+                onChange={handlePasswordChange}
+              />
+              <button className='eyebtn' onClick={togglePasswordVisibility}>
+                {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+              </button>
             </div>
 
+            <Link to="/forgot">Forgot Password</Link> <br />
+            <Link to="/register">Register</Link> <br />
+
+            <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
           </div>
-          
-          )}
-          
-          </CookiesProvider>
+        
+        </div>
       </div>
     </>
   );
