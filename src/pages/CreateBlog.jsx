@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Cookies from 'js-cookie';
+
 
 const CreateBlog = () => {
 
@@ -30,6 +32,12 @@ const CreateBlog = () => {
     const [category, setCategory] = useState('');
     const [newCategory, setNewCategory] = useState('');
     const [message, setMessage] = useState('');
+    const [userId, setUserId] = useState('');
+    useEffect(() => {
+        // Retrieve the user ID from cookies when the component mounts
+        const user_id = Cookies.get('user_id');
+        setUserId(user_id);
+    }, []);
 
     const handleCreateBlog = async () => {
         try {
@@ -39,7 +47,7 @@ const CreateBlog = () => {
                 tags,
                 category: newCategory || category,
                 
-                user_id: 'YourUserIDHere', // Set the user ID accordingly
+                user_id: userId, // Set the user ID accordingly
             };
 
             const response = await axios.post('http://192.168.1.8:8000/store_blog', payload);
@@ -89,6 +97,7 @@ const CreateBlog = () => {
                         <option value={setNewCategory} >{setNewCategory}</option>
 
                     </select>
+                    <p>{userId}</p>
                 </div>
 
 
