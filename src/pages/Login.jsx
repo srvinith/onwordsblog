@@ -13,7 +13,6 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -81,13 +80,11 @@ const Login = () => {
                 {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
               </button>
             </div>
-
             <Link to="/forgot">Forgot Password</Link> <br />
             <Link to="/register">Register</Link> <br />
 
             <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
           </div>
-
         </div>
       </div>
     </>

@@ -30,8 +30,6 @@ const Hero = () => {
           <div className="latest-post">
             <p className='feature-post-text'>Featured Post</p>
             <p className='feature-post-date'>Jully 11,2023</p>
-
-
           </div>
         </div>
       </div>

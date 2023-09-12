@@ -4,24 +4,53 @@ import "react-quill/dist/quill.snow.css";
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 const CreateBlog = () => {
+  const [title, setTitle] = useState('');
+  const [blogText, setBlogText] = useState('');
+  const [tags, setTags] = useState('');
+  const [category, setCategory] = useState('');
+  const [newCategory, setNewCategory] = useState('');
+  const [message, setMessage] = useState('');
 
-    const modules = {
-        toolbar: [
-            [{ font: [] }],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            ["bold", "italic", "underline", "strike"],
-            [{ color: [] }, { background: [] }],
-            [{ script: "sub" }, { script: "super" }],
-            ["blockquote", "code-block"],
-            [{ list: "ordered" }, { list: "bullet" }],
-            ["link", "image", "video"],
-            ["clean"],
-        ],
+  const [categories, setCategories] = useState([]);
+  const [user_id, setUser_id] = useState(null);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://192.168.1.8:8000/get_all_blogs');
+
+        if (response.status === 200) {
+          const blogData = response.data;
+          setCategories(blogData.all_blogs.categories); // Access categories from all_blogs
+          console.log("categories", blogData.all_blogs.categories);
+        } else {
+          alert('An error occurred while fetching categories.');
+        }
+      } catch (error) {
+        alert('An error occurred while fetching category.');
+      }
     };
 
+    fetchCategories();
 
-    // ============
+    // Get the user_id from cookies and set it in the state
+    const user_idFromCookies = Cookies.get('user_id');
+    setUser_id(user_idFromCookies);
+  }, []);
 
+  const modules = {
+    toolbar: [
+      [{ font: [] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ color: [] }, { background: [] }],
+      [{ script: 'sub' }, { script: 'super' }],
+      ['blockquote', 'code-block'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image', 'video'],
+      ['clean'],
+    ],
+  };
 
     const [title, setTitle] = useState('');
     const [blogText, setBlogText] = useState('');
@@ -59,11 +88,36 @@ const CreateBlog = () => {
             setMessage('An error occurred while creating the blog.');
         }
 
+      if (response.status === 200) {
+        setMessage('Blog created successfully.');
+        // Optionally, you can redirect to another page or update the UI.
+      } else {
+        setMessage('An error occurred while creating the blog.');
+      }
+    } catch (error) {
+      setMessage('An error occurred while creating the blog.');
     }
+  };
 
+  return (
+    <>
+      <div className="container">
+        <form>
+          <p>{message && <p>{message}</p>}</p>
+          <div className="editor-container">
+            <div className="top-editor-btn">
+              <button
+                className="btn btn-primary mt-3"
+                type="button"
+                onClick={handleCreateBlog}
+              >
+                Publish
+              </button>
+              <button
+                className="btn btn-primary mt-3"
+                type="button"
 
-    // ============
-
+    
 
 
     return (
@@ -99,13 +153,59 @@ const CreateBlog = () => {
 
 
             </div>
+            <input
+              type="text"
+              required
+              placeholder="Title"
+              className='title-inp'
+              onChange={(e) => setTitle(e.target.value)}
+            />
 
+            <ReactQuill
+              modules={modules}
+              theme="snow"
+              placeholder="The content starts here..."
+              onChange={setBlogText}
+              className="text-editor"
+            />
+          </div>
+        </form>
+        <div className="bottom-create-inp">
+          <form className="tags-inp">
+            <label htmlFor="tags">Tags (comma separated):</label>
+            <input
+              type="text"
+              id="tags"
+              name="tags"
+              onChange={(e) => setTags(e.target.value)}
+            />
+          </form>
+          <select
+            name="category"
+            id="category"
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="" disabled selected>
+              Select a category or enter a new one
+            </option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            id="new-category"
+            name="new_category"
+            placeholder="Enter a new category"
+            onChange={(e) => setNewCategory(e.target.value)}
+          />
+        </div>
 
-        </>
+      </div>
+    </>
+  );
+};
 
-    )
-}
-
-export default CreateBlog
-
-
+export default CreateBlog;
