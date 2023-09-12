@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 // import { Link } from 'react-router-dom';
 // images //
 import che from '../Assets/images/che.webp'
@@ -17,13 +17,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { SendRounded } from '@mui/icons-material';
 
 
+
 // images //
 
 
 const Blog = () => {
-
-
-
   const [isBookmarked, setIsBookmarked] = useState(false);
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked);
@@ -93,12 +91,47 @@ const Blog = () => {
   };
 
 
+  const [blogs, setBlogs] = useState([]);
+
+
+  useEffect(() => {
+    // Make an HTTP request to fetch the blogs
+    fetch("http://192.168.1.8:8000/get_all_blogs")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.all_blogs) {
+          // Set the retrieved blogs in the state
+          setBlogs(data.all_blogs);
+          console.log('all data get')
+        }
+      
+      })
+      .catch((error) => {
+        console.error("Error fetching blogs:", error);
+  
+      });
+  }, []);
+
+
   return (
     <div className="container">
       <div className=" blog-page">
         <div>
           <h2>What nobody tells you about taking a career break
             (and how to emotionally prepare for one)</h2><br></br>
+            <div>
+      <ul>
+        {blogs.map((blog) => (
+          <li key={blog._id}>
+            <h2>{blog.title}</h2>
+            <img src='' alt="" />
+            <p>User ID: {blog.user_id}</p>
+            <p>Category: {blog.text}</p>
+            <p>Summary: {blog.summary}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
           <div className=" blog-logo chegue">
             <div>
               <img src={che} alt="che" className='che' />
@@ -189,6 +222,7 @@ const Blog = () => {
     </div>
   )
 }
+
 
 export default Blog
 
