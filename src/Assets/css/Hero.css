@@ -182,7 +182,7 @@ h5 {
 .trending-post {
     background-color: #E5EDED;
     /* position: relative; */
-    height: 100%;
+    height: 100vh;
 }
 
 .recent-sec {
@@ -191,22 +191,27 @@ h5 {
 
 .traditional-food img {
     width: 100%;
-    margin-top: 30px;
+    top: 0;
+    bottom: 0;
+    transform: translate(10px, 10%);
 }
+
+
 
 /* .article {
     display: flex;
     justify-content: space-evenly;
 } */
 
-.trending-post h3 {
+.trending-post h2 {
     font-family: jost;
+    margin-top: 50px;
 }
 
 .red-article h3 {
     font-family: space, serif;
     font-size: 35px;
-    margin-top: 40px;
+    margin-top: 20%;
 }
 
 .red-article p {
@@ -235,9 +240,7 @@ h5 {
 .eaducation h3 {
 
     font-family: Space Grotesk;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 40.9px;
+
 }
 
 .eaducation p {
@@ -254,6 +257,7 @@ h5 {
 
 .latest-podcasts {
     background-color: #E5EDED;
+    margin: 40px 0 40px 0;
 }
 
 .latest-podcasts h3 {
@@ -298,4 +302,44 @@ h5 {
 
 .more-learn-sec {
     margin: 40px 0 40px 0;
+}
+
+.make {
+    text-align: center;
+    font-family: space, serif;
+}
+
+.great {
+    color: red;
+}
+
+.discover {
+    text-align: center;
+    font-familoy: Jost;
+}
+
+.more-topics {
+    width: 50%;
+    margin: auto;
+}
+
+.technology {
+
+    width: 80%;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+     
+    justify-content: space-between; 
+}
+
+.technology p {
+    border: 1px solid #F4F4F4;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    width: fit-content;
+    height: 40px;
+    text-align: center;
+    padding: 5px;
 }

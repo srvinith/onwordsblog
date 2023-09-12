@@ -13,9 +13,9 @@ import TraditionalFood from '../Assets/images/traditional-food.png'
 import EaduRoom from '../Assets/images/eadu-room.png'
 import HealthyTrad from '../Assets/images/healthy-life-trad.png'
 import MusicTrad from '../Assets/images/music-trad.png'
-import LearnCss from '../Assets/images/learn-css.png'
+// import LearnCss from '../Assets/images/learn-css.png'
 // import Specs from '../Assets/images/specs.svg'
-import Business from '../Assets/images/business.png'
+// import Business from '../Assets/images/business.png'
 // import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const Hero = () => {
   return (
@@ -150,8 +150,8 @@ const Hero = () => {
       </section>
       <section className='trending-post'>
         <div className="container">
-          <h3>Trending Posts</h3>
           <div className="row">
+            <h2>Trending Posts</h2>
             <div className="col-md-6">
               <div className='traditional-food'>
                 <img src={TraditionalFood} alt="Traditioal Food" />
@@ -224,6 +224,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <h2 className='make'>Make <span className='great'>Great Podcast</span> And Stay Tuned</h2>
       <section className='latest-podcasts'>
         <div className="container">
           <div className="row">
@@ -252,15 +253,35 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section className='more-learn-sec'>
+      <section>
+        <div className="container">
+          <h2 className='discover'>Discover more of what matters to you</h2>
+          <div className='more-topics'>
+            <div className=' technology'>
+              <p>technology</p>
+              <p>Agriculture</p>
+              <p>Healthy Lifestyle</p>
+              <p>Selfimprovement</p>
+              <p>Psychology</p>
+              <p>Cryptocurrency</p>
+              <p>Money</p>
+              <p>Selfimprovement</p>
+              <p>Psychology</p>
+
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+      {/* <section className='more-learn-sec'>
         <div className="container">
           <div className="row">
             <div className="col-md-4">
               <div className='learn'>
                 <img src={LearnCss} alt="learn css" />
                 <h6>How to learn css ?</h6>
-                {/* <p><img src={Specs} alt="" /><span>12 min</span></p> */}
-              </div>
+                <p><img src={Specs} alt="" /><span>12 min</span></p>              </div>
             </div>
             <div className="col-md-4">
               <div className='learn'>
@@ -296,7 +317,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
     </>
   )
 }

@@ -6,17 +6,16 @@ import { Close} from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { useCookies } from 'react-cookie';
+
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const [userEmail, setUserEmail] = useState('');
-  const [userId, setUserId] = useState('');
+
   const [showPassword, setShowPassword] = useState(false);
-  const [cookies, setCookie] = useCookies(['userEmail', 'userId']);
+  
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -35,11 +34,9 @@ const Login = () => {
 
       if (response.status === 200) {
         const { user_id, user_email } = response.data;
-        setUserEmail(user_email);
-        setUserId(user_id);
+      
         setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-        setCookie('userEmail', user_email, { path: '/' });
-        setCookie('userId', user_id, { path: '/' });
+       
         window.location.href = '/';
       }
     } catch (error) {
@@ -93,10 +90,7 @@ const Login = () => {
 
             <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
           </div>
-          <div className="d-none">
-            <p>userEmail:{userEmail}</p>
-            <p>userId:{userId}</p>
-          </div>
+         
         </div>
       </div>
     </>
