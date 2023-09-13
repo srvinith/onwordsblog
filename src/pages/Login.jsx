@@ -6,6 +6,7 @@ import { Close } from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Cookies from 'js-cookie';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +33,8 @@ const Login = () => {
         const { user_id, user_email } = response.data;
 
         setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
-
+        Cookies.set('user_id', user_id); // Set an expiration of 7 days (adjust as needed)
+        Cookies.set('user_email', user_email);
         window.location.href = '/';
       }
     } catch (error) {
