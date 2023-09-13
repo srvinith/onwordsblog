@@ -43,7 +43,9 @@ const CreateBlog = () => {
 
     // Get the user_id from cookies and set it in the state
     const user_idFromCookies = Cookies.get('user_id');
-    setUser_id(user_idFromCookies);
+setUser_id(user_idFromCookies);
+
+console.log("User ID from Cookies:", user_idFromCookies);
   }, []);
 
   const modules = {

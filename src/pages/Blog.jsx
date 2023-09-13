@@ -101,6 +101,7 @@ const Blog = () => {
       .then((data) => {
         if (data.all_blogs) {
           // Set the retrieved blogs in the state
+          console.log('All Blogs:', data.all_blogs);
           setBlogs(data.all_blogs);
           console.log('all data get')
         }
@@ -124,9 +125,13 @@ const Blog = () => {
         {blogs.map((blog) => (
           <li key={blog._id}>
             <h2>{blog.title}</h2>
-            <img src='' alt="" />
-            <p>User ID: {blog.user_id}</p>
-            <p>Category: {blog.text}</p>
+            {% if blog.blog_text|length > 0 %}
+        {% if blog.blog_text[0].type == "image" %}
+            <img src="{{ blog.blog_text[0].content }}" alt="First Image">
+        {% endif %}
+    {% endif %}
+            <p>User ID: {blog.name}</p>
+            <p>Category: {blog.category}</p>
             <p>Summary: {blog.summary}</p>
           </li>
         ))}
