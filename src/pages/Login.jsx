@@ -2,21 +2,16 @@ import React, { useState } from 'react'
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import { Link } from 'react-router-dom'
-import { Close} from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import axios from 'axios'
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import Cookies from 'js-cookie';
-
-
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
   const [showPassword, setShowPassword] = useState(false);
-  
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -35,12 +30,9 @@ const Login = () => {
 
       if (response.status === 200) {
         const { user_id, user_email } = response.data;
-       
+
         setMessage(`Login successful. User ID: ${user_id}, Email: ${user_email}`);
 
-        Cookies.set('user_id', user_id);
-        Cookies.set('user_email', user_email);
-       
         window.location.href = '/';
       }
     } catch (error) {
@@ -88,13 +80,11 @@ const Login = () => {
                 {showPassword ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
               </button>
             </div>
-
             <Link to="/forgot">Forgot Password</Link> <br />
             <Link to="/register">Register</Link> <br />
 
             <button className='button2 mt-3' type='submit' onClick={handleLogin}>Login</button>
           </div>
-         
         </div>
       </div>
     </>

@@ -13,9 +13,10 @@ import TraditionalFood from '../Assets/images/traditional-food.png'
 import EaduRoom from '../Assets/images/eadu-room.png'
 import HealthyTrad from '../Assets/images/healthy-life-trad.png'
 import MusicTrad from '../Assets/images/music-trad.png'
-// import LearnCss from '../Assets/images/learn-css.png'
+import John from '../Assets/images/john-follow.svg'
+import LearnCss from '../Assets/images/learn-css.png'
 // import Specs from '../Assets/images/specs.svg'
-// import Business from '../Assets/images/business.png'
+import Business from '../Assets/images/business.png'
 // import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const Hero = () => {
   return (
@@ -29,8 +30,6 @@ const Hero = () => {
           <div className="latest-post">
             <p className='feature-post-text'>Featured Post</p>
             <p className='feature-post-date'>Jully 11,2023</p>
-
-
           </div>
         </div>
       </div>
@@ -253,7 +252,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className='technologies-sec'>
         <div className="container">
           <h2 className='discover'>Discover more of what matters to you</h2>
           <div className='more-topics'>
@@ -267,21 +266,65 @@ const Hero = () => {
               <p>Money</p>
               <p>Selfimprovement</p>
               <p>Psychology</p>
-
             </div>
+            <p className='see-more'>See more topics</p>
           </div>
 
 
         </div>
       </section>
-      {/* <section className='more-learn-sec'>
+      <section className='follow-sec'>
         <div className="container">
+          <h2 className='follow'>Who to follow</h2>
+          <hr />
+          <div className="row">
+            <div className="col-md-4">
+              <div className='follow-blog'>
+                <img src={John} alt="john " />
+                <div>
+                  <span className='john'><h6>John Wicker <span>Follow</span></h6></span>
+                  <p className='psychology'>Psychology and writter<br></br>sharing practical advice for</p>
+
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='follow-blog'>
+                <img src={John} alt="john " />
+                <div>
+                  <span className='john'><h6>John Wicker <span>Follow</span></h6></span>
+                  <p className='psychology'>Psychology and writter<br></br>sharing practical advice for</p>
+
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className='follow-blog'>
+                <img src={John} alt="john " />
+                <div>
+                  <span className='john'><h6>John Wicker <span>Follow</span></h6></span>
+                  <p className='psychology'>Psychology and writter<br></br>sharing practical advice for</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='more-learn-sec'>
+        <div className="container">
+          <div className='recently'>
+            <h2>Recently Saved Post</h2>
+            <p>View All</p>
+          </div>
+          <hr />
           <div className="row">
             <div className="col-md-4">
               <div className='learn'>
                 <img src={LearnCss} alt="learn css" />
                 <h6>How to learn css ?</h6>
-                <p><img src={Specs} alt="" /><span>12 min</span></p>              </div>
+                {/* <p><img src={Specs} alt="" /><span>12 min</span></p>              */}
+              </div>
             </div>
             <div className="col-md-4">
               <div className='learn'>
@@ -317,7 +360,18 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+      <section className='circle-sec-first'>
+                        
+        <div className='mail-sec'>
+         
+          {/* <h2>A monthly post delivered straight to your inbox</h2> */}
+
+        </div>
+        {/* <div className='delivered-mail'>
+
+        </div> */}
+      </section>
 
     </>
   )

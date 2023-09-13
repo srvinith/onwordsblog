@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
-import axios from 'axios';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
+import React, { useState, useEffect } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import Cookies from 'js-cookie'
 const CreateBlog = () => {
   const [title, setTitle] = useState('');
   const [blogText, setBlogText] = useState('');
@@ -83,27 +83,26 @@ const CreateBlog = () => {
     }
   };
 
-  return (
-    <>
-      <div className="container">
-        <form>
-          <p>{message && <p>{message}</p>}</p>
-          <div className="editor-container">
-            <input
-              type="text"
-              required
-              placeholder="Title"
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <ReactQuill
-              modules={modules}
-              theme="snow"
-              placeholder="The content starts here..."
-              onChange={setBlogText}
-              className="text-editor"
-            />
-          </div>
-        </form>
+  
+
+
+    return (
+        <>
+            <div className="container">
+                <form action="/">
+                    <p>{message && <p>{message}</p>}</p>
+                    <div className="editor-container">
+                        <div className="top-editor-btn">
+                            <button className="btn btn-primary">Darft & Save</button>
+                            <Link to="/blogstore"> <button className="btn btn-primary" onClick={handleCreateBlog}>Publish</button></Link>
+                        </div>
+                        <input type="text" required placeholder="Title" className="title-inp"
+                            onChange={setTitle}
+                        />
+                        <input type="text" />
+                        <ReactQuill modules={modules} theme="snow" placeholder="The content starts here..." onChange={setBlogText} className="text-editor" />
+                    </div>
+                </form>
         <div className="bottom-create-inp">
           <form className="tags-inp">
             <label htmlFor="tags">Tags (comma separated):</label>
@@ -137,13 +136,7 @@ const CreateBlog = () => {
             onChange={(e) => setNewCategory(e.target.value)}
           />
         </div>
-        <button
-          className="button2 mt-3"
-          type="button"
-          onClick={handleCreateBlog}
-        >
-          Create Blog
-        </button>
+
       </div>
     </>
   );
