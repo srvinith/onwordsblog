@@ -17,6 +17,7 @@ import John from '../Assets/images/john-follow.svg'
 import LearnCss from '../Assets/images/learn-css.png'
 // import Specs from '../Assets/images/specs.svg'
 import Business from '../Assets/images/business.png'
+import TwitterIcon from '@mui/icons-material/Twitter';
 // import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const Hero = () => {
   return (
@@ -362,15 +363,82 @@ const Hero = () => {
         </div>
       </section>
       <section className='circle-sec-first'>
-                        
-        <div className='mail-sec'>
-         
-          {/* <h2>A monthly post delivered straight to your inbox</h2> */}
-
+        <div className="container">
+          <div className='circle-container'>
+            <h2>A monthly post delivered straight to your inbox</h2>
+          </div>
+          <div className='form-button-sec'>
+            <form action="">
+              <span>
+                <input className='subs-form' type="text" placeholder='Enter Your Email....' />
+                {/* <label htmlFor="EMail"></label> */}
+                <span><button className='sub-button' type='submit'>Subscribe</button></span>
+              </span>
+            </form>
+          </div>
         </div>
-        {/* <div className='delivered-mail'>
-
-        </div> */}
+        <div className='mail-sec'>
+          <div className='social-media'>
+          
+              <span>< TwitterIcon />Twitter <span></span></span>
+              <span>< TwitterIcon />Instagram <span></span></span>
+              <span>< TwitterIcon />FAcebook <span></span></span>
+              <span>< TwitterIcon />Whats app <span></span></span>
+              <span>< TwitterIcon />Yoytube <span></span></span>
+              
+          
+          </div>
+         <div className="container">
+          <div className="row">
+            <div className="col-md-3">
+            <div>
+            <h5>.Blog</h5>
+            <div className="footer">
+              <ul>
+                <h5>Company</h5>
+                <li>Home </li>
+                <li>About Us</li>
+                <li>Event</li>
+                <li>Contact US</li>
+                <li>Private</li>
+              </ul>
+            </div>
+          </div>
+            </div>
+            <div className="col-md-3">
+            <div>
+            <h5>.Blog</h5>
+            <div className="footer">
+              <ul>
+                <h5>Company</h5>
+                <li>Home </li>
+                <li>About Us</li>
+                <li>Event</li>
+                <li>Contact US</li>
+                <li>Private</li>
+              </ul>
+            </div>
+          </div>
+            </div>
+            <div className="col-md-3">
+            <div>
+            <h5>.Blog</h5>
+            <div className="footer">
+              <ul>
+                <h5>Company</h5>
+                <li>Home </li>
+                <li>About Us</li>
+                <li>Event</li>
+                <li>Contact US</li>
+                <li>Private</li>
+              </ul>
+            </div>
+          </div>
+            </div>
+            <div className="col-md-3"></div>
+          </div>
+         </div>
+        </div>
       </section>
 
     </>
